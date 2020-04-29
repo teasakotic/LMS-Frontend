@@ -7,8 +7,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-
-
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 // Material const
@@ -18,7 +19,10 @@ const MaterialComponent = [
   MatGridListModule,
   MatButtonModule,
   MatTabsModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule
 ]
 
 @NgModule({

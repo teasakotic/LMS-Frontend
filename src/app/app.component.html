@@ -22,6 +22,19 @@
           <h3 matLine>Fakulteti</h3>
         </mat-list-item>
       </a> -->
+
+      <!-- FIXME: Loggedin ? /nalog : /login za rutiranje -->
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+        <mat-list-item>
+          <mat-icon matListIcon
+            ><span class="material-icons">
+              account_circle
+            </span></mat-icon
+          >
+          <!-- FIXME: Loggedin ? My Account : Login -->
+          <h3 matLine>Login</h3>
+        </mat-list-item>
+      </a>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content class="content">
