@@ -1,4 +1,19 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened class="drawer">Drawer content</mat-drawer>
-  <mat-drawer-content class="content">Main content</mat-drawer-content>
+  <mat-drawer mode="side" opened class="drawer">
+    <mat-list>
+      <a [routerLink]="['/univerzitet']" routerLinkActive="router-link-active" >
+        <mat-list-item>
+          <mat-icon matListIcon
+            ><span class="material-icons">
+              account_balance
+            </span></mat-icon
+          >
+          <h3 matLine>Univerzitet</h3>
+        </mat-list-item>
+      </a>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
 </mat-drawer-container>

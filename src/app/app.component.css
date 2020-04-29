@@ -3,10 +3,8 @@
   height: 100%;
 }
 
-.drawer {
-    width: auto;
-    height: 100%;
-    background-color: lightblue;
+a {
+    text-decoration: none;
 }
 
 .content {
