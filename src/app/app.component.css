@@ -1,0 +1,14 @@
+.example-container {
+  width: 100%;
+  height: 100%;
+}
+
+.drawer {
+    width: auto;
+    height: 100%;
+    background-color: lightblue;
+}
+
+.content {
+    background-color: orangered;
+}
