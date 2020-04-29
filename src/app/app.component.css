@@ -5,9 +5,9 @@
 
 a {
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .content {
-    background-color: orangered;
     padding: 20px;
 }
