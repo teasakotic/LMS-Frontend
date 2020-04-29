@@ -4,10 +4,11 @@
 }
 
 a {
-    text-decoration: none;
-    text-transform: capitalize;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
 }
 
 .content {
-    padding: 20px;
+  padding: 20px;
 }

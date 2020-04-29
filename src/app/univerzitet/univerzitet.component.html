@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="content">
+    <div class="content-title">
+      <h2 class="mat-title">Univerzitet /ime/</h2>
+    </div>
+    <div class="description">
+      <div class="description-desc">
+        <p>Datum osnivanja univerziteta : 20.10.2005</p>
+        <br />
+        <p>
+          Opis : Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Doloribus unde cumque distinctio fuga reprehenderit qui error vero
+          similique itaque necessitatibus, quam amet impedit tempore beatae
+          dicta magni delectus architecto aliquid./
+        </p>
+        <br />
+        <p>
+          univerzitet@univerzitet.ac.rs
+        </p>
+        <br />
+        <p>
+          Telefon : 066/xxx-xxx
+        </p>
+        <br />
+        <a [routerLink]="['/studijskiProgrami']" routerLinkActive="router-link-active"
+          ><button mat-flat-button color="warn">Studijski programi</button></a
+        >
+      </div>
+      <div class="description-mapbox">
+        <img
+          src="assets/img/mapa.png"
+          alt="Mapa univerziteta"
+          height="400"
+          width="600px"
+        />
+      </div>
+    </div>
+  </div>
+</div>

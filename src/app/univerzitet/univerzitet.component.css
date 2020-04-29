@@ -1,0 +1,53 @@
+.main {
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.content-title {
+    text-transform: uppercase;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    height: 800px;
+
+
+    text-align: center;
+}
+
+
+a button {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+}
+
+.description-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 45%;
+    height: 90%;
+}
+
+.description-mapbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45%;
+    height: 90%;
+}
