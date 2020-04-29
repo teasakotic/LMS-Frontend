@@ -7,12 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './home/home.component';
 import { UniverzitetComponent } from './univerzitet/univerzitet.component';
+import { FakultetComponent } from './fakultet/fakultet.component';
+import { StudijskiProgramComponent } from './studijski-program/studijski-program.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UniverzitetComponent
+    UniverzitetComponent,
+    FakultetComponent,
+    StudijskiProgramComponent
   ],
   imports: [
     BrowserModule,

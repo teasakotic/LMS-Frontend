@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened class="drawer">
     <mat-list>
-      <a [routerLink]="['/univerzitet']" routerLinkActive="router-link-active" >
+      <a [routerLink]="['/univerzitet']" routerLinkActive="router-link-active">
         <mat-list-item>
           <mat-icon matListIcon
             ><span class="material-icons">
@@ -11,6 +11,17 @@
           <h3 matLine>Univerzitet</h3>
         </mat-list-item>
       </a>
+      <!-- FIXME: Lista fakulteta (hoce biti da/ne) -->
+      <!-- <a [routerLink]="['/fakulteti']" routerLinkActive="router-link-active">
+        <mat-list-item>
+          <mat-icon matListIcon
+            ><span class="material-icons">
+              toc
+            </span></mat-icon
+          >
+          <h3 matLine>Fakulteti</h3>
+        </mat-list-item>
+      </a> -->
     </mat-list>
   </mat-drawer>
   <mat-drawer-content class="content">
