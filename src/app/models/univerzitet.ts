@@ -1,5 +1,3 @@
-import { ActivatedRouteSnapshot } from '@angular/router';
-
 export interface Univerzitet {
     id: number,
     naziv: String,
