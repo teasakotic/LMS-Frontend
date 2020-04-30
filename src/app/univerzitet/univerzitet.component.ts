@@ -23,7 +23,6 @@ export class UniverzitetComponent implements OnInit {
 
   ngOnInit(): void {
     this.univerzitetPodaci = this.us.getUniverzitet();
-    console.log(this.univerzitetPodaci);
   }
 
 }
