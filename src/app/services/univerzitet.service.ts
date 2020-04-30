@@ -7,7 +7,7 @@ import { Univerzitet } from '../models/univerzitet';
 })
 export class UniverzitetService {
 
-  // FIXME: For server spring
+  // FIXME: For server setup
   // private _url = "http://localhost:3000/";
   // private prefix = 'univerzitet';
 
