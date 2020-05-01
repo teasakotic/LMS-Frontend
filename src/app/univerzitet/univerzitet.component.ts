@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ModuleWithComponentFactories } from '@angular/core';
 import { UniverzitetService } from '../services/univerzitet.service';
 import { Univerzitet } from '../models/univerzitet';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-univerzitet',
@@ -9,17 +11,20 @@ import { Univerzitet } from '../models/univerzitet';
 })
 export class UniverzitetComponent implements OnInit {
 
-  univerzitetPodaci:Univerzitet = {
-    'id': null,
-    'adresa': null,
-    'datumOsnivanja': null,
-    'emailUniverziteta': null,
-    'naziv': null,
-    'opis': null,
-    'telefonUniverziteta': null
+  univerzitetPodaci: Univerzitet = {
+    id: null,
+    naziv: null,
+    datumOsnivanja: null, 
+    opis: null, 
+    rektor: null,
+    adresa: null,
+    emailUniverziteta: null,
+    telefonUniverziteta: null,
+    fakulteti: null
   };
+  
 
-  constructor(private us: UniverzitetService) { }
+  constructor(private us: UniverzitetService, private router: Router) { }
 
   ngOnInit(): void {
     this.univerzitetPodaci = this.us.getUniverzitet();

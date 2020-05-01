@@ -1,27 +1,35 @@
 <div class="main">
-  <div class="content" >
+  <div class="content">
     <div class="content-title">
-      <h2 class="mat-title">Univerzitet {{univerzitetPodaci.naziv}}</h2>
+      <h2 class="mat-title">{{ univerzitetPodaci.naziv }}</h2>
     </div>
     <div class="description">
       <div class="description-desc">
-        <p>Datum osnivanja univerziteta : {{univerzitetPodaci.datumOsnivanja}}</p>
-        <br />
         <p>
-          {{univerzitetPodaci.opis}}
+          Datum osnivanja univerziteta : {{ univerzitetPodaci.datumOsnivanja | date  }}
         </p>
         <br />
         <p>
-          Email fakulteta:
-          {{univerzitetPodaci.emailUniverziteta}}
+          {{ univerzitetPodaci.opis }}
         </p>
         <br />
-        <p>
-          Telefon :
-          {{univerzitetPodaci.telefonUniverziteta}}
-        </p>
+        <h2>Email univerziteta:</h2>
+        <ul *ngFor="let email of univerzitetPodaci.emailUniverziteta">
+          <li>
+            {{ email.email }}
+          </li>
+        </ul>
         <br />
-        <a [routerLink]="['/fakulteti']" routerLinkActive="router-link-active"
+        <h2>Telefon univerziteta:</h2>
+        <ul *ngFor="let telefon of univerzitetPodaci.telefonUniverziteta">
+          <li>
+            {{ telefon.telefon }}
+          </li>
+        </ul>
+        <br />
+        <a
+          [routerLink]="['/fakulteti']"
+          routerLinkActive="router-link-active"
           ><button mat-flat-button color="warn">Fakulteti</button></a
         >
       </div>

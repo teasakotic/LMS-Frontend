@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Fakultet } from '../models/fakultet';
 
 @Component({
   selector: 'app-fakultet',
@@ -10,6 +11,7 @@ export class FakultetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
