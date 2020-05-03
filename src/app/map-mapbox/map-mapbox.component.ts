@@ -12,6 +12,7 @@ export class MapMapboxComponent implements OnInit {
   constructor(private map: MapService) { }
 
   ngOnInit(): void {
+    // TODO: If you wanna view mapbox, clear comments
     // this.map.buildMap();
   }
 
