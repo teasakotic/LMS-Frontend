@@ -15,4 +15,5 @@ export class MapMapboxComponent implements OnInit {
     this.map.buildMap();
   }
 
+
 }
