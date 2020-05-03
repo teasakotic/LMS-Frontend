@@ -14,20 +14,19 @@ export class UniverzitetComponent implements OnInit {
   univerzitetPodaci: Univerzitet = {
     id: null,
     naziv: null,
-    datumOsnivanja: null, 
-    opis: null, 
+    datumOsnivanja: null,
+    opis: null,
     rektor: null,
     adresa: null,
     emailUniverziteta: null,
     telefonUniverziteta: null,
     fakulteti: null
   };
-  
+
 
   constructor(private us: UniverzitetService, private router: Router) { }
 
   ngOnInit(): void {
-    this.univerzitetPodaci = this.us.getUniverzitet();
   }
 
 }
