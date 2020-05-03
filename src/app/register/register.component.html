@@ -1,1 +1,45 @@
-<p>register works!</p>
+<div class="main">
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Unesite korisnicko ime</mat-label>
+      <input matInput [formControl]="korisnickoIme" required />
+      <mat-error *ngIf="korisnickoIme.invalid">{{
+        getErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Unesite lozinku</mat-label>
+      <input matInput [formControl]="lozinka" required />
+      <mat-error *ngIf="lozinka.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Unesite email</mat-label>
+      <input matInput [formControl]="email" required />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Unesite prezime</mat-label>
+      <input matInput [formControl]="prezime" required />
+      <mat-error *ngIf="prezime.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Unesite broj telefon</mat-label>
+      <input matInput [formControl]="brTelefona" required />
+      <mat-error *ngIf="brTelefona.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Unesite svoj jmbg</mat-label>
+      <input matInput [formControl]="jmbg" required />
+      <mat-error *ngIf="jmbg.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary">Registruj se</button>
+    <br />
+    <a
+      mat-raised-button
+      [routerLink]="['/login']"
+      routerLinkActive="router-link-active"
+      >Imas nalog? Prijavi se
+    </a>
+  </div>
+</div>
