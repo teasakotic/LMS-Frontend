@@ -1,8 +1,11 @@
 import { Zvanje } from './zvanje';
+import { LicniPodaci } from './licni-podaci';
+import { RegistrovaniKorisnik } from './registrovani-korisnik';
 
 export interface Nastavnik {
-    id:number;
+    id:number
     biografija: String
     zvanje: Zvanje
-    // FIXME: Need to add more information
+    licniPodaci: LicniPodaci
+    registrovaniKorisnik: RegistrovaniKorisnik
 }
