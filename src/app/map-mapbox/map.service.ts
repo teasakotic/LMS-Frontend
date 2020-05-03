@@ -11,7 +11,7 @@ export class MapService {
   lng = 19.833549;
   zoom = 13
   constructor() {
-    Object.getOwnPropertyDescriptor(mapboxgl, "accessToken").set('pk.eyJ1IjoibG1uamFhIiwiYSI6ImNrOXI4NDJyNTBybnUzbnFwcDZhM3Jzd2gifQ.ih8HUYdzyRHUwUoF6t_0BA');
+    Object.getOwnPropertyDescriptor(mapboxgl, "accessToken").set('API_KEY');
   }
   buildMap() {
     var map = new mapboxgl.Map({
