@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 
 import { MaterialModule } from './shared/material/material.module';
 import { RegisterComponent } from './register/register.component';
+import { MapMapboxComponent } from './map-mapbox/map-mapbox.component';
 
 
 
@@ -25,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     FakultetComponent,
     StudijskiProgramComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MapMapboxComponent
   ],
   imports: [
     BrowserModule,
