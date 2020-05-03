@@ -12,7 +12,8 @@ export class MapMapboxComponent implements OnInit {
   constructor(private map: MapService) { }
 
   ngOnInit(): void {
-    this.map.buildMap();
+    // this.map.buildMap();
   }
+
 
 }
