@@ -16,6 +16,8 @@ import { MaterialModule } from './shared/material/material.module';
 import { RegisterComponent } from './register/register.component';
 import { MapMapboxComponent } from './map-mapbox/map-mapbox.component';
 import { SilabusComponent } from './silabus/silabus.component';
+import { ProfilComponent } from './profil/profil.component';
+import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.component';
 
 
 
@@ -29,7 +31,9 @@ import { SilabusComponent } from './silabus/silabus.component';
     LoginComponent,
     RegisterComponent,
     MapMapboxComponent,
-    SilabusComponent
+    SilabusComponent,
+    ProfilComponent,
+    IzmjeniProfilComponent
   ],
   imports: [
     BrowserModule,
