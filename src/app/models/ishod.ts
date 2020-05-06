@@ -8,9 +8,10 @@ export interface Ishod {
     id: number,
     opis: String,
     nedelja: number
-    evaluacijaZnanja: EvaluacijaZnanja
-    predmet: Predmet
-    terminNastave: TerminNastave
-    obrazovniCilj: ObrazovniCilj
-    nastavniMaterijal: NastavniMaterijal
+    // TODO: Delete comments for final version
+    // evaluacijaZnanja: EvaluacijaZnanja
+    // predmet: Predmet
+    // terminNastave: TerminNastave
+    // obrazovniCilj: ObrazovniCilj
+    // nastavniMaterijal: NastavniMaterijal
 }
