@@ -5,11 +5,13 @@ import { UniverzitetComponent } from './univerzitet/univerzitet.component';
 import { FakultetComponent } from './fakultet/fakultet.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SilabusComponent } from './silabus/silabus.component';
 
 
 const routes: Routes = [
   {path: 'univerzitet', component: UniverzitetComponent},
   {path: 'fakulteti', component: FakultetComponent},
+  {path: 'silabus', component: SilabusComponent},
 
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

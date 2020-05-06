@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './shared/material/material.module';
 import { RegisterComponent } from './register/register.component';
 import { MapMapboxComponent } from './map-mapbox/map-mapbox.component';
+import { SilabusComponent } from './silabus/silabus.component';
 
 
 
@@ -27,7 +28,8 @@ import { MapMapboxComponent } from './map-mapbox/map-mapbox.component';
     StudijskiProgramComponent,
     LoginComponent,
     RegisterComponent,
-    MapMapboxComponent
+    MapMapboxComponent,
+    SilabusComponent
   ],
   imports: [
     BrowserModule,
