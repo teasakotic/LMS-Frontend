@@ -28,4 +28,5 @@ export class ProfilComponent implements OnInit {
     { id: 0, korisnickoIme: 'test', lozinka: 'test', email: 'test@test.test', dozvola: { id: 0, naziv: 'student' } }
   ]
 
+
 }

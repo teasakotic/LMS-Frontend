@@ -1,13 +1,17 @@
-<div class="main">
-  <div class="content">
-    <mat-card *ngFor="let korisnik of data">
-      <mat-card-title>
-        {{ korisnik.korisnickoIme }}
-      </mat-card-title>
-      <mat-card-subtitle>
-        Uloga : {{ korisnik.dozvola["naziv"] }}
-      </mat-card-subtitle>
-    </mat-card>
-    <button mat-raised-button color="primary">Edit profile</button>
-  </div>
+<div class="content">
+  <h3>Hello #name#</h3>
+  <h3>Name</h3>
+  <p>name...</p>
+  <hr />
+  <h3>Password</h3>
+  <p>password...</p>
+  <hr />
+  <button
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/profil', 'id']"
+    routerLinkActive="router-link-active"
+  >
+    Edit profile
+  </button>
 </div>

@@ -7,23 +7,24 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SilabusComponent } from './silabus/silabus.component';
 import { ProfilComponent } from './profil/profil.component';
-
+import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.component';
 
 const routes: Routes = [
-  {path: 'univerzitet', component: UniverzitetComponent},
-  {path: 'fakulteti', component: FakultetComponent},
-  {path: 'silabus', component: SilabusComponent},
+  { path: 'univerzitet', component: UniverzitetComponent },
+  { path: 'fakulteti', component: FakultetComponent },
+  { path: 'silabus', component: SilabusComponent },
 
-  {path: 'profil', component: ProfilComponent},
-  
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  { path: 'profil', component: ProfilComponent },
+  { path: 'profil/:id', component: IzmjeniProfilComponent },
 
-  {path: '**', component: HomeComponent}
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
