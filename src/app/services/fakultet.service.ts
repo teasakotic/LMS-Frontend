@@ -14,4 +14,8 @@ export class FakultetService {
   getFakulteti(): Observable<Fakultet[]> {
     return this.http.get<Fakultet[]>(this._url);
   }
+
+  getFakultet(id: number): Observable<Fakultet> {
+    return this.http.get<Fakultet>(this._url + `/${id}`);
+  }
 }

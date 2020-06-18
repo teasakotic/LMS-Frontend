@@ -1,1 +1,6 @@
-<p>studijski-program works!</p>
+<p>studijski-program works for {{ fakultet.naziv }}!</p>
+<ul *ngFor="let sp of fakultet.studijskiProgram">
+  <a [routerLink]="['./', sp.id, 'predmeti']" routerLinkActive="router-link-active"
+    ><li>{{ sp.naziv }}</li></a
+  >
+</ul>

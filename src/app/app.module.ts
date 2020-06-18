@@ -18,6 +18,7 @@ import { MapMapboxComponent } from './map-mapbox/map-mapbox.component';
 import { SilabusComponent } from './silabus/silabus.component';
 import { ProfilComponent } from './profil/profil.component';
 import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.component';
+import { PredmetiComponent } from './predmeti/predmeti.component';
 
 
 
@@ -33,7 +34,8 @@ import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.c
     MapMapboxComponent,
     SilabusComponent,
     ProfilComponent,
-    IzmjeniProfilComponent
+    IzmjeniProfilComponent,
+    PredmetiComponent
   ],
   imports: [
     BrowserModule,
