@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Univerzitet } from '../models/univerzitet';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UniverzitetService {
+  private _url = 'http://localhost:3000/univerzitet';
 
-  // FIXME: For server setup
-  // private _url = "http://localhost:3000/";
-  // private prefix = 'univerzitet';
+  constructor(private http: HttpClient) {}
 
-
-  constructor(private http: HttpClient) { }
-
-  getUniverzitet() {}
+  getUniverzitet(id: number): Observable<Univerzitet> {
+    return this.http.get<Univerzitet>(this._url + `/${id}`);
+  }
 }
