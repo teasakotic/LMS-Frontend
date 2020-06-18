@@ -3,7 +3,14 @@
     <mat-tab label="{{ fakultet.naziv }}">
       {{ fakultet.opis }}
       <br />
-      <button mat-raised-button color="primary">Studijski program</button>
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/fakulteti', fakultet.id, 'studijski-program']"
+        routerLinkActive="router-link-active"
+      >
+        Studijski program 
+      </button>
     </mat-tab>
   </div>
 </mat-tab-group>

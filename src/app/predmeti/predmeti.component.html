@@ -1,0 +1,10 @@
+<div>
+  <div
+    style="border: 1px solid black;"
+    *ngFor="let sp of studijskiProgram.godinaStudija.predmeti"
+  >
+    <p>{{ sp.naziv }}</p>
+    <p>ESPB Bodovi: {{ sp.espb }}</p>
+    <p>Broj predavanja {{ sp.brojPredavanja }}</p>
+  </div>
+</div>
