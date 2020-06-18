@@ -1,16 +1,14 @@
-import { Component, OnInit, ModuleWithComponentFactories } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UniverzitetService } from '../services/univerzitet.service';
 import { Univerzitet } from '../models/univerzitet';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-univerzitet',
   templateUrl: './univerzitet.component.html',
-  styleUrls: ['./univerzitet.component.css']
+  styleUrls: ['./univerzitet.component.css'],
 })
 export class UniverzitetComponent implements OnInit {
-
   univerzitetPodaci: Univerzitet = {
     id: null,
     naziv: null,
@@ -23,10 +21,11 @@ export class UniverzitetComponent implements OnInit {
     fakulteti: null
   };
 
-
-  constructor(private us: UniverzitetService, private router: Router) { }
+  constructor(private us: UniverzitetService, private router: Router) {}
 
   ngOnInit(): void {
-  }
+    this.us.getUniverzitet(1).subscribe((res) => (this.univerzitetPodaci = res));
 
+    console.log(this.univerzitetPodaci);
+  }
 }
