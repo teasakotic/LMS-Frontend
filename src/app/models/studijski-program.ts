@@ -1,5 +1,4 @@
 import { Fakultet } from './fakultet';
-import { Nastavnik } from './nastavnik';
 import { GodinaStudija } from './godina-studija';
 
 export interface StudijskiProgram {

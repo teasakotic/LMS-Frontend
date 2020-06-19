@@ -1,16 +1,8 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>Id</th>
-    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-  </ng-container>
-  <ng-container matColumnDef="opis">
-    <th mat-header-cell *matHeaderCellDef>Opis</th>
-    <td mat-cell *matCellDef="let element">{{ element.opis }}</td>
-  </ng-container>
-  <ng-container matColumnDef="nedelja">
-    <th mat-header-cell *matHeaderCellDef>Nedelja</th>
-    <td mat-cell *matCellDef="let element">{{ element.nedelja }}</td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+<!-- <div>
+  <ul *ngFor="let p of ishodi">
+    <li>{{p.id}}</li>
+    <li>{{p.opis}}</li>
+    <li>{{p.nedelja}}</li>
+  </ul>
+</div> -->
+<!-- TODO: This doesnt work FIX IT -->

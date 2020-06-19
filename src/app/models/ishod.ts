@@ -5,13 +5,13 @@ import { ObrazovniCilj } from './obrazovni-cilj';
 import { NastavniMaterijal } from './nastavni-materijal';
 
 export interface Ishod {
-    id: number,
-    opis: String,
-    nedelja: number
-    // TODO: Delete comments for final version
-    // evaluacijaZnanja: EvaluacijaZnanja
-    // predmet: Predmet
-    // terminNastave: TerminNastave
-    // obrazovniCilj: ObrazovniCilj
-    // nastavniMaterijal: NastavniMaterijal
+  id: number;
+  opis: String;
+  nedelja: String;
+  // TODO: Delete comments for final version
+  // evaluacijaZnanja: EvaluacijaZnanja
+  // predmet: Predmet
+  // terminNastave: TerminNastave
+  // obrazovniCilj: ObrazovniCilj
+  // nastavniMaterijal: NastavniMaterijal
 }
