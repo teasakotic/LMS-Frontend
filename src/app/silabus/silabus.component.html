@@ -1,8 +1,16 @@
-<!-- <div>
-  <ul *ngFor="let p of ishodi">
-    <li>{{p.id}}</li>
-    <li>{{p.opis}}</li>
-    <li>{{p.nedelja}}</li>
-  </ul>
-</div> -->
-<!-- TODO: This doesnt work FIX IT -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Opis</th>
+      <th scope="col">Nedelja</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of predmet.silabus">
+      <td scope="row">{{ p.id }}</td>
+      <td scope="row">{{ p.opis }}</td>
+      <td>{{ p.nedelja }}</td>
+    </tr>
+  </tbody>
+</table>

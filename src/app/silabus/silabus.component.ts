@@ -33,9 +33,6 @@ export class SilabusComponent implements OnInit {
     godinaStudija: null,
   };
 
-  // TODO: Get silabus from chosen predmet
-  ishodi: Ishod[] = this.predmet.silabus;
-
   constructor(private ps: PredmetiService, private ar: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -43,4 +40,7 @@ export class SilabusComponent implements OnInit {
       .getPredmet(this.ar.snapshot.params['id'])
       .subscribe((r) => (this.predmet = r));
   }
+
+  displayedColumns: string[] = ['id', 'opis', 'nedelja'];
+  dataSource = this.predmet.silabus;
 }
