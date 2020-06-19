@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudijskiProgramService } from '../services/studijski-program.service';
 import { StudijskiProgram } from '../models/studijski-program';
+import { Predmet } from '../models/predmet';
 
 @Component({
   selector: 'app-predmeti',
@@ -26,7 +27,5 @@ export class PredmetiComponent implements OnInit {
     this.sps
       .getStudijskiProgram(this.ar.snapshot.params['id'])
       .subscribe((r) => (this.studijskiProgram = r));
-      console.log(this.studijskiProgram);
-      
   }
 }

@@ -10,6 +10,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.component';
 import { StudijskiProgramComponent } from './studijski-program/studijski-program.component';
 import { PredmetiComponent } from './predmeti/predmeti.component';
+import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-materijali.component';
 
 const routes: Routes = [
   { path: 'univerzitet', component: UniverzitetComponent },
@@ -20,9 +21,13 @@ const routes: Routes = [
     component: StudijskiProgramComponent,
   },
 
-  {path: 'fakulteti/:id/studijski-program/:id/predmeti', component: PredmetiComponent},
+  {
+    path: 'fakulteti/:id/studijski-program/:id/predmeti',
+    component: PredmetiComponent,
+  },
 
-  { path: 'silabus', component: SilabusComponent },
+  { path: 'silabus/:id', component: SilabusComponent },
+  { path: 'nastavni-materijal/:id', component: NastavniMaterijaliComponent },
 
   { path: 'profil', component: ProfilComponent },
   { path: 'profil/:id', component: IzmjeniProfilComponent },

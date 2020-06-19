@@ -19,6 +19,7 @@ import { SilabusComponent } from './silabus/silabus.component';
 import { ProfilComponent } from './profil/profil.component';
 import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.component';
 import { PredmetiComponent } from './predmeti/predmeti.component';
+import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-materijali.component';
 
 
 
@@ -35,7 +36,8 @@ import { PredmetiComponent } from './predmeti/predmeti.component';
     SilabusComponent,
     ProfilComponent,
     IzmjeniProfilComponent,
-    PredmetiComponent
+    PredmetiComponent,
+    NastavniMaterijaliComponent
   ],
   imports: [
     BrowserModule,
