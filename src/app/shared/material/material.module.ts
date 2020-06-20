@@ -11,7 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 // Material const
 const MaterialComponent = [
@@ -24,11 +25,13 @@ const MaterialComponent = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
-]
+  MatTableModule,
+  MatSelectModule,
+  MatIconModule,
+];
 
 @NgModule({
   imports: [MaterialComponent],
-  exports: [MaterialComponent]
+  exports: [MaterialComponent],
 })
-export class MaterialModule { }
+export class MaterialModule {}

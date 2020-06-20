@@ -5,9 +5,31 @@
     </ul>
   </mat-tab>
   <mat-tab label="Obavjestenja">
-    Obavjestenja 
+    <div *ngFor="let o of student.pohadjanjePredmeta; let i = index">
+      <ul *ngFor="let a of o.realizacijaPredmeta.obavjestenje; let j = index">
+        <div class="border-div">
+          <li>{{ a.naslov }}</li>
+          <li>{{ a.vremePostavljanja }}</li>
+        </div>
+      </ul>
+    </div>
   </mat-tab>
-  <mat-tab label="Prijava ispita">Prijavi ispit</mat-tab>
+  <!-- --------------------------------------- Under construction -->
+  <mat-tab label="Prijava ispita">
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Predmeti</mat-label>
+        <select matNativeControl required>
+          <option *ngFor="let p of student.pohadjanjePredmeta">{{
+            p.realizacijaPredmeta.predmet
+          }}</option>
+        </select>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="warn">Prijavi ispit</button>
+    </div>
+  </mat-tab>
+  <!-- --------------------------------------- Under construction -->
   <mat-tab label="Ostalo">
     Istorija studiranja (prethodni polozeni predmeti, bodovi itd...)
   </mat-tab>
