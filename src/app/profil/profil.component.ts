@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrovaniKorisnik } from '../models/registrovani-korisnik';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-profil',
@@ -7,17 +8,20 @@ import { RegistrovaniKorisnik } from '../models/registrovani-korisnik';
   styleUrls: ['./profil.component.css'],
 })
 export class ProfilComponent implements OnInit {
-  constructor(private regi) {}
-
-  ngOnInit(): void {}
-
-  data: RegistrovaniKorisnik[] = [
-    {
-      id: 0,
-      korisnickoIme: 'test',
-      lozinka: 'test',
-      email: 'test@test.test',
-      dozvola: { id: 0, naziv: 'student' },
+  korisnik: RegistrovaniKorisnik = {
+    dozvola: {
+      id: null,
+      naziv: null,
     },
-  ];
+    email: null,
+    id: null,
+    korisnickoIme: null,
+    lozinka: null,
+  };
+
+  constructor(private ls: LoginService) {}
+
+  ngOnInit(): void {
+    this.ls.getKorisnik(1).subscribe((r) => (this.korisnik = r));
+  }
 }
