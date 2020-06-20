@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
+import { RegistrovaniKorisnik } from '../models/registrovani-korisnik';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  constructor(private ls: LoginService, private router: Router) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  korisnik: RegistrovaniKorisnik = {
+    id: null,
+    korisnickoIme: null,
+    lozinka: null,
+    email: null,
+    dozvola: null,
+  };
+
+  login() {
+    this.ls.login(this.korisnik).subscribe((r) => this.router.navigate(['/']));
   }
-
-  username = new FormControl('', [Validators.required]);
-  password = new FormControl('', [Validators.required]);
-
-  getErrorMessage() {
-    if (this.username.hasError('required') && this.password.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.username.hasError('email') ? 'Not valid username' : '' &&  this.username.hasError('email') ? 'Not valid password' : '';
-  }
-
 }

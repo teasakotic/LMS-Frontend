@@ -1,17 +1,26 @@
 <div class="main">
   <div class="example-container">
     <mat-form-field appearance="fill">
-      <mat-label>Enter your username</mat-label>
-      <input matInput [formControl]="username" required />
-      <mat-error *ngIf="username.invalid">{{ getErrorMessage() }}</mat-error>
+      <mat-label>Unesite korisnicko ime</mat-label>
+      <input matInput [(ngModel)]="korisnik.korisnickoIme" required />
+      <!-- <mat-error *ngIf="korisnickoIme.invalid">{{
+        getErrorMessage()
+      }}</mat-error>   FIXME: Validation check -->
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <mat-label>Enter your password</mat-label>
-      <input matInput [formControl]="password" required />
-      <mat-error *ngIf="password.invalid">{{ getErrorMessage() }}</mat-error>
+      <mat-label>Unesite lozinku</mat-label>
+      <input matInput [(ngModel)]="korisnik.lozinka" required />
+      <!-- <mat-error *ngIf="lozinka.invalid">{{ getErrorMessage() }}</mat-error> FIXME: Validation check -->
     </mat-form-field>
-    <button mat-raised-button color="primary">Log In</button>
-    <br>
-    <a mat-raised-button [routerLink]="['/register']" routerLinkActive="router-link-active" >Nemas nalog ? Registruj se </a>
+    <button mat-raised-button color="primary" (click)="login()">
+      Log In
+    </button>
+    <br />
+    <a
+      mat-raised-button
+      [routerLink]="['/register']"
+      routerLinkActive="router-link-active"
+      >Nemas nalog ? Registruj se
+    </a>
   </div>
 </div>

@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   korisnickoIme = new FormControl('', [Validators.required]);
   lozinka = new FormControl('', [Validators.required]);
@@ -22,15 +20,29 @@ export class RegisterComponent implements OnInit {
   slika = new FormControl('', [Validators.required]);
 
   getErrorMessage() {
-    if (this.korisnickoIme.hasError('required') && this.lozinka.hasError('required')
-    && this.email.hasError('required')  && this.prezime.hasError('required')
-    && this.brTelefona.hasError('required')  && this.jmbg.hasError('required')) {
+    if (
+      this.korisnickoIme.hasError('required') &&
+      this.lozinka.hasError('required') &&
+      this.email.hasError('required') &&
+      this.prezime.hasError('required') &&
+      this.brTelefona.hasError('required') &&
+      this.jmbg.hasError('required')
+    ) {
       return 'Polja ne smiju biti prazna';
     }
 
-    return this.korisnickoIme.hasError('korisnickoIme') ? 'Nije validan korisnicko ime' : '' &&  this.lozinka.hasError('lozinka') ? 'Nije validan lozinka' : '' 
-    &&  this.email.hasError('email') ? 'Nije validan email' : ''  &&  this.prezime.hasError('prezime') ? 'Nije validan prezime' : ''
-    &&  this.brTelefona.hasError('brTelefona') ? 'Nije validan broj telefona' : ''  &&  this.jmbg.hasError('jmbg') ? 'Nije validan jmbg' : '';
+    return this.korisnickoIme.hasError('korisnickoIme')
+      ? 'Nije validno korisnicko ime'
+      : '' && this.lozinka.hasError('lozinka')
+      ? 'Nije validna lozinka'
+      : '' && this.email.hasError('email')
+      ? 'Nije validan email'
+      : '' && this.prezime.hasError('prezime')
+      ? 'Nije validno prezime'
+      : '' && this.brTelefona.hasError('brTelefona')
+      ? 'Nije validan broj telefona'
+      : '' && this.jmbg.hasError('jmbg')
+      ? 'Nije validan jmbg'
+      : '';
   }
-
 }
