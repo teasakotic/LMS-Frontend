@@ -20,6 +20,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.component';
 import { PredmetiComponent } from './predmeti/predmeti.component';
 import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-materijali.component';
+import { StudentPanelComponent } from './student-panel/student-panel.component';
 
 
 
@@ -37,7 +38,8 @@ import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-mate
     ProfilComponent,
     IzmjeniProfilComponent,
     PredmetiComponent,
-    NastavniMaterijaliComponent
+    NastavniMaterijaliComponent,
+    StudentPanelComponent
   ],
   imports: [
     BrowserModule,

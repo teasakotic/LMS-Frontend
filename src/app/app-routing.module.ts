@@ -11,6 +11,7 @@ import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.c
 import { StudijskiProgramComponent } from './studijski-program/studijski-program.component';
 import { PredmetiComponent } from './predmeti/predmeti.component';
 import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-materijali.component';
+import { StudentPanelComponent } from './student-panel/student-panel.component';
 
 const routes: Routes = [
   { path: 'univerzitet', component: UniverzitetComponent },
@@ -31,6 +32,8 @@ const routes: Routes = [
 
   { path: 'profil', component: ProfilComponent },
   { path: 'profil/:id', component: IzmjeniProfilComponent },
+
+  { path: 'profil/:id/student-panel', component: StudentPanelComponent },
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
