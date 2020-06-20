@@ -1,32 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrovaniKorisnik } from '../models/registrovani-korisnik';
-
-// export interface RegistrovaniKorisnik {
-//   id: number
-//   korisnickoIme: String
-//   lozinka: String
-//   email: String
-//   dozvola: Dozvola
-// }
-
-
-
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
-  styleUrls: ['./profil.component.css']
+  styleUrls: ['./profil.component.css'],
 })
 export class ProfilComponent implements OnInit {
+  korisnik: RegistrovaniKorisnik = {
+    dozvola: {
+      id: null,
+      naziv: null,
+    },
+    email: null,
+    id: null,
+    korisnickoIme: null,
+    lozinka: null,
+  };
 
-  constructor() { }
+  constructor(private ls: LoginService) {}
 
   ngOnInit(): void {
+    this.ls.getKorisnik(1).subscribe((r) => (this.korisnik = r));
   }
-
-  data: RegistrovaniKorisnik[] = [
-    { id: 0, korisnickoIme: 'test', lozinka: 'test', email: 'test@test.test', dozvola: { id: 0, naziv: 'student' } }
-  ]
-
-
 }

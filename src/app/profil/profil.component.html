@@ -1,15 +1,17 @@
 <div class="content">
-  <h3>Hello #name#</h3>
+  <h3>Hello {{ korisnik.korisnickoIme }}</h3>
   <h3>Name</h3>
-  <p>name...</p>
+  <p>{{ korisnik.korisnickoIme }}</p>
   <hr />
-  <h3>Password</h3>
-  <p>password...</p>
+  <h4>Email</h4>
+  <p>{{ korisnik.email }}</p>
   <hr />
+  <h5>Dozvola</h5>
+  <p>{{ korisnik.dozvola.naziv }}</p>
   <button
     mat-raised-button
     color="primary"
-    [routerLink]="['/profil', 'id']"
+    [routerLink]="['/profil', korisnik.id]"
     routerLinkActive="router-link-active"
   >
     Edit profile

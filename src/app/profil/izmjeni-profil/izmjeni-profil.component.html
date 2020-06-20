@@ -1,13 +1,37 @@
 <div class="content">
-  <form class="example-form">
+  <form class="example-form" (ngSubmit)="izmjena()">
     <mat-form-field class="example-full-width">
-      <mat-label>Name</mat-label>
-      <input matInput placeholder="name" />
+      <mat-label>Korisnicko ime</mat-label>
+      <input
+        name="korisnickoIme"
+        matInput
+        value="{{ korisnik.korisnickoIme }}"
+        [(ngModel)]="korisnik.korisnickoIme"
+      />
     </mat-form-field>
     <br />
     <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="password" />
+      <mat-label>Lozinka</mat-label>
+      <input
+        name="lozinka"
+        matInput
+        value="{{ korisnik.lozinka }}"
+        [(ngModel)]="korisnik.lozinka"
+      />
     </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        name="email"
+        matInput
+        value="{{ korisnik.email }}"
+        [(ngModel)]="korisnik.email"
+      />
+    </mat-form-field>
+    <hr />
+    <button type="submit" mat-raised-button color="primary">
+      Save changes
+    </button>
   </form>
 </div>
