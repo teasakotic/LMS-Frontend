@@ -18,14 +18,14 @@ export class UniverzitetComponent implements OnInit {
     adresa: null,
     emailUniverziteta: null,
     telefonUniverziteta: null,
-    fakulteti: null
+    fakulteti: null,
   };
 
   constructor(private us: UniverzitetService, private router: Router) {}
 
   ngOnInit(): void {
-    this.us.getUniverzitet(1).subscribe((res) => (this.univerzitetPodaci = res));
-
-    console.log(this.univerzitetPodaci);
+    this.us
+      .getUniverzitet(1)
+      .subscribe((res) => (this.univerzitetPodaci = res));
   }
 }

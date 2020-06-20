@@ -1,0 +1,14 @@
+<mat-tab-group>
+  <mat-tab label="Predmeti">
+    <ul *ngFor="let p of student.pohadjanjePredmeta">
+      <li>{{ p.realizacijaPredmeta.predmet }}</li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Obavjestenja">
+    Obavjestenja 
+  </mat-tab>
+  <mat-tab label="Prijava ispita">Prijavi ispit</mat-tab>
+  <mat-tab label="Ostalo">
+    Istorija studiranja (prethodni polozeni predmeti, bodovi itd...)
+  </mat-tab>
+</mat-tab-group>

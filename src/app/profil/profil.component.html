@@ -16,4 +16,14 @@
   >
     Edit profile
   </button>
+  <br />
+  <!-- Only if ROLE_STUDENT -->
+  <button
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/profil', korisnik.id, 'student-panel']"
+    routerLinkActive="router-link-active"
+  >
+    Studentski panel
+  </button>
 </div>
