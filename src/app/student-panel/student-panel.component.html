@@ -5,7 +5,15 @@
     </ul>
   </mat-tab>
   <mat-tab label="Obavjestenja">
-    Obavjestenja 
+    <div *ngFor="let o of student.pohadjanjePredmeta; let i = index">
+      <ul *ngFor="let a of o.realizacijaPredmeta.obavjestenje; let j = index">
+        <div class="border-div">
+          <li>{{ a.naslov }}</li>
+          <li>{{ a.vremePostavljanja }}</li>
+        </div>
+      </ul>
+    </div>
+    <!-- <button (click)="prikazi()">d</button> -->
   </mat-tab>
   <mat-tab label="Prijava ispita">Prijavi ispit</mat-tab>
   <mat-tab label="Ostalo">

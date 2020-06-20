@@ -13,6 +13,8 @@ import { Obavjestenje } from '../models/obavjestenje';
   styleUrls: ['./student-panel.component.css'],
 })
 export class StudentPanelComponent implements OnInit {
+  obavjestenje = null;
+
   student: Student = {
     adresa: {} as Adresa,
     id: null,
@@ -21,7 +23,11 @@ export class StudentPanelComponent implements OnInit {
     pohadjanjePredmeta: [] as PohadjanjePredmeta[],
   };
 
-  constructor(private ss: StudentService) {}
+  constructor(private ss: StudentService) {
+    this.obavjestenje = this.student.pohadjanjePredmeta.map((r) =>
+      r.realizacijaPredmeta.obavjestenje.map((o) => o.naslov)
+    );
+  }
 
   ngOnInit(): void {
     this.ss.getStudent(1).subscribe((r) => (this.student = r));
