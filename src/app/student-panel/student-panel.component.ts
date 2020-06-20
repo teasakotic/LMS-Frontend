@@ -21,18 +21,6 @@ export class StudentPanelComponent implements OnInit {
     pohadjanjePredmeta: [] as PohadjanjePredmeta[],
   };
 
-  oba = {
-    id: null,
-    sadrzaj: null,
-    vremePostavljanja: null,
-    naslov: null,
-    datumObjave: null,
-  } as Obavjestenje;
-
-  ob = this.student.pohadjanjePredmeta.map((r) =>
-    r.realizacijaPredmeta.obavjestenje.map((a) => (this.oba.naslov = a.naslov))
-  );
-
   constructor(private ss: StudentService) {}
 
   ngOnInit(): void {
