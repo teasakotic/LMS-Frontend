@@ -23,6 +23,19 @@
         </mat-list-item>
       </a> -->
 
+      <!-- If logged in show power off button -->
+      <a [routerLink]="['/']" routerLinkActive="router-link-active">
+        <mat-list-item>
+          <mat-icon matListIcon
+            ><span class="material-icons">
+              power_settings_new
+            </span></mat-icon
+          >
+          <!-- FIXME: Loggedin ? My Account : Login -->
+          <h3 matLine>Logout</h3>
+        </mat-list-item>
+      </a>
+
       <!-- FIXME: Loggedin ? /nalog : /login za rutiranje u zavisnosti da li je logovan ili ne-->
       <a [routerLink]="['/login']" routerLinkActive="router-link-active">
         <mat-list-item>
@@ -53,7 +66,23 @@
               face
             </span></mat-icon
           >
-          <h3 matLine>Profil </h3>
+          <h3 matLine>Profil</h3>
+        </mat-list-item>
+      </a>
+
+      <!-- If admin is logged in then show this link -->
+      <a
+        [routerLink]="['/administrator-panel']"
+        routerLinkActive="router-link-active"
+      >
+        <mat-list-item>
+          <mat-icon matListIcon
+            ><span class="material-icons">
+              build
+            </span></mat-icon
+          >
+          <!-- FIXME: Loggedin ? My Account : Login -->
+          <h3 matLine>Admin panel</h3>
         </mat-list-item>
       </a>
     </mat-list>

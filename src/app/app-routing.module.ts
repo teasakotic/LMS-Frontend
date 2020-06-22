@@ -12,6 +12,7 @@ import { StudijskiProgramComponent } from './studijski-program/studijski-program
 import { PredmetiComponent } from './predmeti/predmeti.component';
 import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-materijali.component';
 import { StudentPanelComponent } from './student-panel/student-panel.component';
+import { AdministratorPanelComponent } from './administrator/administrator-panel/administrator-panel.component';
 
 const routes: Routes = [
   { path: 'univerzitet', component: UniverzitetComponent },
@@ -37,6 +38,8 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+
+  { path: 'administrator-panel', component: AdministratorPanelComponent },
 
   { path: '**', component: HomeComponent },
 ];
