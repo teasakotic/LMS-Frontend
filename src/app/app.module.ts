@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';1
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,8 @@ import { IzmjeniProfilComponent } from './profil/izmjeni-profil/izmjeni-profil.c
 import { PredmetiComponent } from './predmeti/predmeti.component';
 import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-materijali.component';
 import { StudentPanelComponent } from './student-panel/student-panel.component';
+import { AdministratorComponent } from './administrator/administrator.component';
+import { AdministratorPanelComponent } from './administrator/administrator-panel/administrator-panel.component';
 
 
 
@@ -39,7 +41,9 @@ import { StudentPanelComponent } from './student-panel/student-panel.component';
     IzmjeniProfilComponent,
     PredmetiComponent,
     NastavniMaterijaliComponent,
-    StudentPanelComponent
+    StudentPanelComponent,
+    AdministratorComponent,
+    AdministratorPanelComponent
   ],
   imports: [
     BrowserModule,
