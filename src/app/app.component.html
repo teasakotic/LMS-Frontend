@@ -85,6 +85,21 @@
           <h3 matLine>Admin panel</h3>
         </mat-list-item>
       </a>
+
+      <!-- TODO: Prebaciti na nastavnik-panel, id -->
+      <a
+        [routerLink]="['/nastavnik-panel']"
+        routerLinkActive="router-link-active"
+      >
+        <mat-list-item>
+          <mat-icon matListIcon
+            ><span class="material-icons">
+              build
+            </span></mat-icon
+          >
+          <h3 matLine>Nastavnik panel</h3>
+        </mat-list-item>
+      </a>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content class="content">

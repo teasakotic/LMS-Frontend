@@ -23,6 +23,8 @@ import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-mate
 import { StudentPanelComponent } from './student-panel/student-panel.component';
 import { AdministratorComponent } from './administrator/administrator.component';
 import { AdministratorPanelComponent } from './administrator/administrator-panel/administrator-panel.component';
+import { NastavnikPanelComponent } from './nastavnik/nastavnik-panel/nastavnik-panel.component';
+import { NastavnikComponent } from './nastavnik/nastavnik.component';
 
 
 
@@ -43,7 +45,9 @@ import { AdministratorPanelComponent } from './administrator/administrator-panel
     NastavniMaterijaliComponent,
     StudentPanelComponent,
     AdministratorComponent,
-    AdministratorPanelComponent
+    AdministratorPanelComponent,
+    NastavnikPanelComponent,
+    NastavnikComponent
   ],
   imports: [
     BrowserModule,
