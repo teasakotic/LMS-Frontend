@@ -3,6 +3,8 @@ import { KorisniciService } from 'src/app/services/korisnici.service';
 import { RegistrovaniKorisnik } from 'src/app/models/registrovani-korisnik';
 import { StudijskiProgramService } from 'src/app/services/studijski-program.service';
 import { StudijskiProgram } from 'src/app/models/studijski-program';
+import { AdministrativnoOsobljeService } from 'src/app/services/administrativno-osoblje.service';
+import { AdministrativnoOsoblje } from 'src/app/models/administrativno-osoblje';
 
 @Component({
   selector: 'app-administrator-panel',
@@ -12,6 +14,7 @@ import { StudijskiProgram } from 'src/app/models/studijski-program';
 export class AdministratorPanelComponent implements OnInit {
   korisnici: RegistrovaniKorisnik[] = [];
   studijskiProgrami: StudijskiProgram[] = [];
+  administrativnoOsoblje: AdministrativnoOsoblje[] = [];
 
   // Korisnici
   dataSourceKorisnici;
@@ -21,9 +24,14 @@ export class AdministratorPanelComponent implements OnInit {
   dataSourceStudijskiProgram;
   displayedColumnsStudijskiProgram: string[];
 
+  //Administrativno osoblje
+  dataSourceAdministrativnoOsoblje;
+  displayedColumnsAdministrativnoOsoblje: string[];
+
   constructor(
     private ks: KorisniciService,
-    private sps: StudijskiProgramService
+    private sps: StudijskiProgramService,
+    private aos: AdministrativnoOsobljeService
   ) {}
 
   ngOnInit(): void {
@@ -38,15 +46,24 @@ export class AdministratorPanelComponent implements OnInit {
         'akcija',
       ];
     });
-    this.sps.getStudijskiProgrami().subscribe(sp => {
+    this.sps.getStudijskiProgrami().subscribe((sp) => {
       this.studijskiProgrami = sp;
       this.dataSourceStudijskiProgram = this.studijskiProgrami;
-      this.displayedColumnsStudijskiProgram = [
+      this.displayedColumnsStudijskiProgram = ['id', 'naziv', 'opis', 'akcija'];
+    });
+    this.aos.getAdministrativnoOsoblje().subscribe((aos) => {
+      this.administrativnoOsoblje = aos;
+      this.dataSourceAdministrativnoOsoblje = this.administrativnoOsoblje;
+      this.displayedColumnsAdministrativnoOsoblje = [
         'id',
-        'naziv',
-        'opis',
-        'akcija'
-      ]
-    })
+        'korisnickoIme',
+        'email',
+        'dozvola',
+        'prezime',
+        'brTelefona',
+        'jmbg',
+        'akcija',
+      ];
+    });
   }
 }

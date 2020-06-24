@@ -1,0 +1,50 @@
+<mat-tab-group>
+  <mat-tab label="Predmeti">
+    <ul *ngFor="let p of predmeti">
+      <li>{{ p.naziv }}</li>
+      <li>{{ p.espb }}</li>
+      <li>{{ p.brojPredavanja }}</li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Silabusi" *ngFor="let s of silabus; let i = index">
+    <ul *ngFor="let a of s">
+      <li>No: {{ i }}</li>
+      <li>{{ a.opis }}</li>
+      <!-- <li>{{ a.nedelja }}</li> -->
+    </ul>
+  </mat-tab>
+  <mat-tab label="Ishod">
+    Kreiranje ishoda po terminima (raspored ishoda termina je realizovan kao
+    vremenska linija pri cemu svaki ishod ima naslov, kratak komentar i
+    sliku</mat-tab
+  >
+  <mat-tab label="Definicija evaluacije">
+    Definisanje instrumenata evaluacije
+  </mat-tab>
+  <mat-tab label="Ishod">
+    Upravljanje obavjestenjima za predmete kojima su angazovani
+  </mat-tab>
+  <mat-tab label="Pretraga">
+    Pretraga studenata po : 1. Imenu 2. Prezimenu 3. Broju indeksa 4. Godina
+    upisa 5. Prosecnoj oceni (Pretraga se vrsi na nivou fakulteta a nakon toga
+    se vrsi filtriranje)
+  </mat-tab>
+  <mat-tab label="Podaci o studentima">
+    Pregledanje podataka o studentima
+    <ul>
+      <li>Osnovne podatke</li>
+      <li>Prosecnu ocenu i osvojeno ECTS tokom studiranja</li>
+      <li>Upise studenata</li>
+      <li>
+        Polozene ispite (predmete), sa ocenom i brojem bodova za svaki ispit
+      </li>
+      <li>Neuspesna polaganja</li>
+      <li>Prijavljenim ispitima</li>
+      <li>Zavrsni rad studenata</li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Uredjivanje ocjena">
+    Da unose ocene za ispite za predmeta na kojima su angazovani kao
+    prof/predavac (ocjene se mogu unijeti u roku od 15 dana od polaganja)
+  </mat-tab>
+</mat-tab-group>
