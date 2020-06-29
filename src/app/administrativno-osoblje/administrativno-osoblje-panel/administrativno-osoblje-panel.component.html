@@ -1,0 +1,56 @@
+<mat-tab-group>
+  <mat-tab label="Upis studenata">
+    <div style="display: flex; justify-content: center; padding-top: 5rem;">
+      <div class="example-container" style="text-align: center;">
+        <mat-form-field appearance="fill">
+          <mat-label>JMBG</mat-label>
+          <input matInput [(ngModel)]="noviStudent.licniPodaci.jmbg" />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Ime</mat-label>
+          <input
+            matInput
+            [(ngModel)]="noviStudent.registrovaniKorisnik.korisnickoIme"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Mesto</mat-label>
+          <input matInput [(ngModel)]="noviStudent.adresa.mesto" />
+        </mat-form-field>
+        <br />
+        <!-- FIXME: Uvedi datum rodjenja ili izbaci ga -->
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Datum rodjena</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <br /> -->
+        <!-- FIXME: Isto vazi i za ovo -->
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Trenutno prebivaliste</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <br /> -->
+        <button mat-raised-button color="primary" (click)="addStudent()">
+          Registruj studenta
+        </button>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Raspored nastave">
+    <ul *ngFor="let r of raspored">
+      <li>{{ r.id }}</li>
+      <li>{{ r.vremePocetka }}</li>
+      <li>{{ r.vremeZavrsetka }}</li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Akademski kalendar">
+    <ul *ngFor="let a of akademskiKalendari">
+      <li>{{ a.radniDan }}</li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Raspored ispita i kolokvijuma"> Content 3 </mat-tab>
+  <mat-tab label="Obavjestenja"> Content 3 </mat-tab>
+  <mat-tab label="Podaci o studentima"> Content 3 </mat-tab>
+</mat-tab-group>

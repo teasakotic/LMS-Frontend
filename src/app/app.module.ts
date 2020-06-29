@@ -25,6 +25,8 @@ import { AdministratorComponent } from './administrator/administrator.component'
 import { AdministratorPanelComponent } from './administrator/administrator-panel/administrator-panel.component';
 import { NastavnikPanelComponent } from './nastavnik/nastavnik-panel/nastavnik-panel.component';
 import { NastavnikComponent } from './nastavnik/nastavnik.component';
+import { AdministrativnoOsobljeComponent } from './administrativno-osoblje/administrativno-osoblje.component';
+import { AdministrativnoOsobljePanelComponent } from './administrativno-osoblje/administrativno-osoblje-panel/administrativno-osoblje-panel.component';
 
 
 
@@ -47,7 +49,9 @@ import { NastavnikComponent } from './nastavnik/nastavnik.component';
     AdministratorComponent,
     AdministratorPanelComponent,
     NastavnikPanelComponent,
-    NastavnikComponent
+    NastavnikComponent,
+    AdministrativnoOsobljeComponent,
+    AdministrativnoOsobljePanelComponent
   ],
   imports: [
     BrowserModule,
