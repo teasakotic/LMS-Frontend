@@ -44,7 +44,8 @@ export class AdministrativnoOsobljePanelComponent implements OnInit {
   // TODO: Raspored treba biti lista modela Raspored, napravi Raspored interface
   raspored;
 
-  akademskiKalendari = [] as AkademskiKalendar[];
+  akademskiKalendari: AkademskiKalendar[] = [];
+  studenti: Student[] = [];
 
   constructor(
     private ss: StudentService,
@@ -54,13 +55,17 @@ export class AdministrativnoOsobljePanelComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.rn.getRaspored().subscribe((r) => (this.raspored = r));
-    this.aks
-      .getKalendari()
-      .subscribe((r) =>
-        this.akademskiKalendari.map((x) => (this.akademskiKalendari = r))
-      );
-    console.log(this.akademskiKalendari);
+    this.rn.getRaspored().subscribe((r) => {
+      (this.raspored = r),
+        this.ss.getStudenti().subscribe((res) => {
+          (this.studenti = res),
+            this.aks
+              .getKalendari()
+              .subscribe((response) => (this.akademskiKalendari = response));
+        });
+    });
+
+    console.log(this.studenti);
   }
 
   addStudent() {
