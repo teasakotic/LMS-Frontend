@@ -14,6 +14,7 @@ import { NastavniMaterijaliComponent } from './nastavni-materijali/nastavni-mate
 import { StudentPanelComponent } from './student-panel/student-panel.component';
 import { AdministratorPanelComponent } from './administrator/administrator-panel/administrator-panel.component';
 import { NastavnikPanelComponent } from './nastavnik/nastavnik-panel/nastavnik-panel.component';
+import { AdministrativnoOsobljePanelComponent } from './administrativno-osoblje/administrativno-osoblje-panel/administrativno-osoblje-panel.component';
 
 const routes: Routes = [
   { path: 'univerzitet', component: UniverzitetComponent },
@@ -44,6 +45,10 @@ const routes: Routes = [
 
   // TODO: Promjeniti path na 'nastavnik-panel/:id' , jer dobijamo id od nastavnika ciji je panel
   { path: 'nastavnik-panel', component: NastavnikPanelComponent },
+  {
+    path: 'administrativno-osoblje-panel',
+    component: AdministrativnoOsobljePanelComponent,
+  },
 
   { path: '**', component: HomeComponent },
 ];
