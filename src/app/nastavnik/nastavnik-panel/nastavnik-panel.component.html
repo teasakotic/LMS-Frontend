@@ -6,12 +6,14 @@
       <li>{{ p.brojPredavanja }}</li>
     </ul>
   </mat-tab>
-  <mat-tab label="Silabusi" *ngFor="let s of silabus; let i = index">
-    <ul *ngFor="let a of s">
-      <li>No: {{ i }}</li>
-      <li>{{ a.opis }}</li>
-      <!-- <li>{{ a.nedelja }}</li> -->
-    </ul>
+  <mat-tab label="Silabusi">
+    <div *ngFor="let s of silabus; let i = index">
+      <ul *ngFor="let a of s">
+        <li>No: {{ i }}</li>
+        <li>{{ a.opis }}</li>
+        <!-- <li>{{ a.nedelja }}</li> -->
+      </ul>
+    </div>
   </mat-tab>
   <mat-tab label="Ishod">
     Kreiranje ishoda po terminima (raspored ishoda termina je realizovan kao
@@ -21,7 +23,7 @@
   <mat-tab label="Definicija evaluacije">
     Definisanje instrumenata evaluacije
   </mat-tab>
-  <mat-tab label="Ishod">
+  <mat-tab label="Upravljanje obavjestenjima">
     Upravljanje obavjestenjima za predmete kojima su angazovani
   </mat-tab>
   <mat-tab label="Pretraga">

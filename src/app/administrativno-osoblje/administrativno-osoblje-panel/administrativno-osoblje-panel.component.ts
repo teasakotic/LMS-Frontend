@@ -55,17 +55,12 @@ export class AdministrativnoOsobljePanelComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.rn.getRaspored().subscribe((r) => {
-      (this.raspored = r),
-        this.ss.getStudenti().subscribe((res) => {
-          (this.studenti = res),
-            this.aks
-              .getKalendari()
-              .subscribe((response) => (this.akademskiKalendari = response));
-        });
+    this.rn.getRaspored().subscribe((ras) => {
+      this.raspored = ras;
     });
-
-    console.log(this.studenti);
+    this.aks.getKalendari().subscribe((aks) => {
+      this.akademskiKalendari = aks;
+    });
   }
 
   addStudent() {

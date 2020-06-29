@@ -46,13 +46,9 @@
     </ul>
   </mat-tab>
   <mat-tab label="Akademski kalendar">
-    <li *ngFor="let a of akademskiKalendari">
-      <ul>
-        {{
-          a.radniDani
-        }}
-      </ul>
-    </li>
+    <ul *ngFor="let a of akademskiKalendari">
+      <li>{{ a.radniDan }}</li>
+    </ul>
   </mat-tab>
   <mat-tab label="Raspored ispita i kolokvijuma"> Content 3 </mat-tab>
   <mat-tab label="Obavjestenja"> Content 3 </mat-tab>
