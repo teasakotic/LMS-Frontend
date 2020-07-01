@@ -43,7 +43,10 @@ export class NastavnikPanelComponent implements OnInit {
       );
       this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
-
-    console.log(this.dataSourceSilabus);
   }
+
+  // TODO: Uncomment after providing service
+  // delete(id: number) {
+  //   this.servis.delete(id).subscribe((r) => console.log('Uspesno brisanje'));
+  // }
 }
