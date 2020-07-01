@@ -1,15 +1,18 @@
 <div class="main">
   <div class="content">
     <div class="content-title">
-      <h2 class="mat-title">Naziv univerziteta : {{ univerzitetPodaci.naziv }}</h2>
+      <h2 class="mat-title">
+        {{ univerzitetPodaci.naziv }}
+      </h2>
     </div>
     <div class="description">
       <div class="description-desc">
         <p>
-          Datum osnivanja univerziteta : {{ univerzitetPodaci.datumOsnivanja | date  }}
+          Datum osnivanja univerziteta :
+          {{ univerzitetPodaci.datumOsnivanja | date }}
         </p>
         <br />
-        <p>
+        <p class="opis">
           {{ univerzitetPodaci.opis }}
         </p>
         <br />
@@ -20,20 +23,19 @@
           </li>
         </ul>
         <br />
-        <h2>Telefon univerziteta:</h2>
+        <h2>Telefoni univerziteta:</h2>
         <ul *ngFor="let telefon of univerzitetPodaci.telefonUniverziteta">
           <li>
             {{ telefon.telefon }}
           </li>
         </ul>
         <br />
-        <a
-          [routerLink]="['/fakulteti']"
-          routerLinkActive="router-link-active"
+        <a [routerLink]="['/fakulteti']" routerLinkActive="router-link-active"
           ><button mat-flat-button color="warn">Fakulteti</button></a
         >
       </div>
       <div class="description-mapbox">
+        <h4 class="mapbox-header">Lokacija univerziteta</h4>
         <app-map-mapbox></app-map-mapbox>
       </div>
     </div>
