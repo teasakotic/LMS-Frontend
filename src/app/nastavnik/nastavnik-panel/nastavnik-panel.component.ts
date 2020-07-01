@@ -13,6 +13,7 @@ export class NastavnikPanelComponent implements OnInit {
   nastavnik: Nastavnik = {} as Nastavnik;
   predmeti: Predmet[] = [];
   silabus = [];
+
   constructor(private ns: NastavnikService) {}
 
   ngOnInit(): void {
@@ -22,7 +23,6 @@ export class NastavnikPanelComponent implements OnInit {
       res.studijskiProgram.godinaStudija.predmeti.forEach((s) =>
         this.silabus.push(s.silabus)
       );
-      console.log(this.silabus);
     });
   }
 }
