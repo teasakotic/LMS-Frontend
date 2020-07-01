@@ -5,14 +5,6 @@ import { Predmet } from '../models/predmet';
 import { ActivatedRoute } from '@angular/router';
 import { PredmetiComponent } from '../predmeti/predmeti.component';
 
-// TODO: Delete me after setup backend
-// const elementData: Ishod[] = [
-//   { id: 0, opis: 'Opis prve nedelje', nedelja: 1 },
-//   { id: 1, opis: 'Opis druge nedelje', nedelja: 2 },
-//   { id: 2, opis: 'Opis trece nedelje', nedelja: 3 },
-//   { id: 3, opis: 'Opis cetvrte nedelje', nedelja: 4 },
-// ];
-
 @Component({
   selector: 'app-silabus',
   templateUrl: './silabus.component.html',
@@ -29,18 +21,20 @@ export class SilabusComponent implements OnInit {
     naziv: null,
     obavezan: null,
     ostaliCasovi: null,
-    silabus: null,
+    silabus: [{} as Ishod],
     godinaStudija: null,
   };
+
+  dataSource = [];
 
   constructor(private ps: PredmetiService, private ar: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.ps
-      .getPredmet(this.ar.snapshot.params['id'])
-      .subscribe((r) => (this.predmet = r));
+    this.ps.getPredmet(this.ar.snapshot.params['id']).subscribe((r) => {
+      this.predmet = r;
+      this.dataSource = r.silabus;
+    });
   }
 
   displayedColumns: string[] = ['id', 'opis', 'nedelja'];
-  dataSource = this.predmet.silabus;
 }

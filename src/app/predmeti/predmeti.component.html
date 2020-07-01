@@ -1,22 +1,27 @@
-<div>
+<div class="content">
   <div
-    style="border: 1px solid black;"
+    class="faculty-div"
     *ngFor="let sp of studijskiProgram.godinaStudija.predmeti"
   >
-    <p>Naziv predmeta: {{ sp.naziv }}</p>
+    <p>Predmet : {{ sp.naziv }}</p>
     <p>ESPB Bodovi: {{ sp.espb }}</p>
     <p>Broj predavanja {{ sp.brojPredavanja }}</p>
 
-    <a [routerLink]="['/silabus', sp.id]" routerLinkActive="router-link-active"
-      ><button mat-raised-button color="primary">
-        Pogledaj silabus predmeta
-      </button></a
-    >
-    <a
-    [routerLink]="['/nastavni-materijal', sp.id]" routerLinkActive="router-link-active" 
-      ><button mat-raised-button>
-        Pogledaj nastavni materijal za predmet
-      </button></a
-    >
+    <div class="links">
+      <a
+        [routerLink]="['/silabus', sp.id]"
+        routerLinkActive="router-link-active"
+        ><button mat-raised-button color="primary">
+          Pogledaj silabus predmeta
+        </button></a
+      >
+      <a
+        [routerLink]="['/nastavni-materijal', sp.id]"
+        routerLinkActive="router-link-active"
+        ><button mat-raised-button>
+          Pogledaj nastavni materijal za predmet
+        </button></a
+      >
+    </div>
   </div>
 </div>

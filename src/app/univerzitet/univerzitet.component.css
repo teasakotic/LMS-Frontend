@@ -8,6 +8,15 @@
   height: 50%;
   width: 100%;
   align-items: center;
+  background-color: lightgrey;
+  border-radius: 20px;
+}
+
+.mat-title {
+  font-weight: bold;
+  letter-spacing: 5px;
+  padding: 20px;
+  border-bottom: 2px solid black;
 }
 
 .content-title {
@@ -29,6 +38,9 @@ a button {
   text-decoration: none;
   color: white;
   font-style: italic;
+  padding: 0px 30px;
+
+  text-transform: inherit;
 }
 
 .description-desc {
@@ -39,6 +51,15 @@ a button {
 
   width: 45%;
   height: 90%;
+
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.description-desc .opis {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  font-weight: 500;
 }
 
 .description-mapbox {
@@ -46,8 +67,19 @@ a button {
   justify-content: center;
   align-items: center;
 
+  flex-direction: column;
+
   width: 45%;
   height: 90%;
+
+  padding: 20px;
+}
+
+.description-mapbox .mapbox-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px;
+  border-bottom: 1px solid lightslategray;
 }
 
 .description-mapbox img {

@@ -1,16 +1,23 @@
 <mat-tab-group>
   <div *ngFor="let fakultet of fakulteti">
     <mat-tab label="{{ fakultet.naziv }}">
-      {{ fakultet.opis }}
-      <br />
-      <button
-        mat-raised-button
-        color="primary"
-        [routerLink]="['/fakulteti', fakultet.id, 'studijski-program']"
-        routerLinkActive="router-link-active"
-      >
-        Studijski program 
-      </button>
+      <div class="faculty-desc">
+        <h2 class="faculty-header">{{ fakultet.opis }}</h2>
+        <h4 class="faculty-email">Email fakulteta: {{ fakultet.email }}</h4>
+
+        <br />
+        <div class="down">
+          <p>Pogledajte program za {{ fakultet.naziv }}</p>
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['/fakulteti', fakultet.id, 'studijski-program']"
+            routerLinkActive="router-link-active"
+          >
+            Studijski program
+          </button>
+        </div>
+      </div>
     </mat-tab>
   </div>
 </mat-tab-group>
