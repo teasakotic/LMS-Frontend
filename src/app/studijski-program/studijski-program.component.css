@@ -1,7 +1,7 @@
 .faculty-desc {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 
   background-color: lightgrey;
   height: 500px;

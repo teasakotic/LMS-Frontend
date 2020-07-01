@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StudijskiProgramService } from '../services/studijski-program.service';
 import { StudijskiProgram } from '../models/studijski-program';
 import { Predmet } from '../models/predmet';
+import { GodinaStudija } from '../models/godina-studija';
 
 @Component({
   selector: 'app-predmeti',
@@ -10,13 +11,15 @@ import { Predmet } from '../models/predmet';
   styleUrls: ['./predmeti.component.css'],
 })
 export class PredmetiComponent implements OnInit {
+
   studijskiProgram: StudijskiProgram = {
     id: null,
     fakultet: null,
     naziv: null,
     opis: null,
-    godinaStudija: null,
+    godinaStudija: {} as GodinaStudija
   };
+
 
   constructor(
     private sps: StudijskiProgramService,
