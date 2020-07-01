@@ -15,6 +15,7 @@ import { StudentPanelComponent } from './student-panel/student-panel.component';
 import { AdministratorPanelComponent } from './administrator/administrator-panel/administrator-panel.component';
 import { NastavnikPanelComponent } from './nastavnik/nastavnik-panel/nastavnik-panel.component';
 import { AdministrativnoOsobljePanelComponent } from './administrativno-osoblje/administrativno-osoblje-panel/administrativno-osoblje-panel.component';
+import { PrijemniComponent } from './prijemni/prijemni.component';
 
 const routes: Routes = [
   { path: 'univerzitet', component: UniverzitetComponent },
@@ -37,6 +38,10 @@ const routes: Routes = [
   { path: 'profil/:id', component: IzmjeniProfilComponent },
 
   { path: 'profil/:id/student-panel', component: StudentPanelComponent },
+  {
+    path: 'profil/:id/prijemni-ispit',
+    component: PrijemniComponent,
+  },
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
