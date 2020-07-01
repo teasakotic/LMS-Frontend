@@ -14,6 +14,13 @@ export class NastavnikPanelComponent implements OnInit {
   predmeti: Predmet[] = [];
   silabus = [];
 
+  // Predmeti
+  dataSourcePredmeti;
+  displayedColumnsPredmeti: string[];
+  // Silabus
+  dataSourceSilabus = [];
+  displayedColumnsSilabus: string[];
+
   constructor(private ns: NastavnikService) {}
 
   ngOnInit(): void {
@@ -23,6 +30,20 @@ export class NastavnikPanelComponent implements OnInit {
       res.studijskiProgram.godinaStudija.predmeti.forEach((s) =>
         this.silabus.push(s.silabus)
       );
+      this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
+      this.displayedColumnsPredmeti = [
+        'naziv',
+        'espb',
+        'brojPredavanja',
+        'brojVezbi',
+        'istrazivackiRad',
+      ];
+      res.studijskiProgram.godinaStudija.predmeti.map((x) =>
+        this.dataSourceSilabus.push(x.silabus)
+      );
+      this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
+
+    console.log(this.dataSourceSilabus);
   }
 }
