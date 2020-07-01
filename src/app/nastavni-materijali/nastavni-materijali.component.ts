@@ -8,7 +8,7 @@ import { NastavniMaterijalService } from '../services/nastavni-materijal.service
   styleUrls: ['./nastavni-materijali.component.css'],
 })
 export class NastavniMaterijaliComponent implements OnInit {
-  nastavniMaterijal: NastavniMaterijal;
+  nastavniMaterijal: NastavniMaterijal[];
 
   constructor(private nms: NastavniMaterijalService) {}
 
