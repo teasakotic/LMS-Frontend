@@ -1,0 +1,21 @@
+.faculty-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: lightgrey;
+  height: 500px;
+}
+
+.faculty-desc .faculty-header {
+  text-transform: uppercase;
+}
+
+li {
+  text-transform: uppercase;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
