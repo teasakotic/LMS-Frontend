@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Nastavnik } from 'src/app/models/nastavnik';
 import { NastavnikService } from 'src/app/services/nastavnik.service';
 import { Predmet } from 'src/app/models/predmet';
 import { Ishod } from 'src/app/models/ishod';
+import { SilabusServiceService } from 'src/app/services/silabus-service.service';
 
 @Component({
   selector: 'app-nastavnik-panel',
@@ -12,7 +13,6 @@ import { Ishod } from 'src/app/models/ishod';
 export class NastavnikPanelComponent implements OnInit {
   nastavnik: Nastavnik = {} as Nastavnik;
   predmeti: Predmet[] = [];
-  silabus = [];
 
   // Predmeti
   dataSourcePredmeti;
@@ -21,15 +21,16 @@ export class NastavnikPanelComponent implements OnInit {
   dataSourceSilabus = [];
   displayedColumnsSilabus: string[];
 
-  constructor(private ns: NastavnikService) {}
+  constructor(
+    private ns: NastavnikService,
+    private ss: SilabusServiceService
+  ) {}
 
   ngOnInit(): void {
     this.ns.getNastavnik(1).subscribe((res) => {
       this.nastavnik = res;
       this.predmeti = res.studijskiProgram.godinaStudija.predmeti;
-      res.studijskiProgram.godinaStudija.predmeti.forEach((s) =>
-        this.silabus.push(s.silabus)
-      );
+
       this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
       this.displayedColumnsPredmeti = [
         'naziv',
@@ -38,11 +39,13 @@ export class NastavnikPanelComponent implements OnInit {
         'brojVezbi',
         'istrazivackiRad',
       ];
-      res.studijskiProgram.godinaStudija.predmeti.map((x) =>
-        this.dataSourceSilabus.push(x.silabus)
-      );
+      // res.studijskiProgram.godinaStudija.predmeti.map((x) =>
+      //   this.dataSourceSilabus.push(x.silabus)
+      // );
+      this.ss.getAll().subscribe((r) => this.dataSourceSilabus.push(r));
       this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
+    console.log(this.dataSourceSilabus);
   }
 
   // TODO: Uncomment after providing service

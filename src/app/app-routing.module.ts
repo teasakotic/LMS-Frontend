@@ -52,7 +52,7 @@ const routes: Routes = [
   // TODO: Promjeniti path na 'nastavnik-panel/:id' , jer dobijamo id od nastavnika ciji je panel
   { path: 'nastavnik-panel', component: NastavnikPanelComponent },
   {
-    path: 'nastavnik-panel/addedit',
+    path: 'nastavnik-panel/addedit/:id',
     component: NastavnikPanelAddEditComponent,
   },
   {
