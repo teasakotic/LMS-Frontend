@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UniverzitetService {
-  private _url = 'http://localhost:3000/univerzitet';
+  private _url = 'http://localhost:8080/univerzitet';
 
   constructor(private http: HttpClient) {}
 

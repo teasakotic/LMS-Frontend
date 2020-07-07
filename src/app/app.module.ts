@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';1
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+1;
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,8 +30,7 @@ import { AdministrativnoOsobljeComponent } from './administrativno-osoblje/admin
 import { AdministrativnoOsobljePanelComponent } from './administrativno-osoblje/administrativno-osoblje-panel/administrativno-osoblje-panel.component';
 import { PrijemniComponent } from './prijemni/prijemni.component';
 import { NastavnikPanelAddEditComponent } from './nastavnik/nastavnik-panel/nastavnik-panel-add-edit/nastavnik-panel-add-edit.component';
-
-
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { NastavnikPanelAddEditComponent } from './nastavnik/nastavnik-panel/nast
     AdministrativnoOsobljeComponent,
     AdministrativnoOsobljePanelComponent,
     PrijemniComponent,
-    NastavnikPanelAddEditComponent
+    NastavnikPanelAddEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,9 +64,15 @@ import { NastavnikPanelAddEditComponent } from './nastavnik/nastavnik-panel/nast
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

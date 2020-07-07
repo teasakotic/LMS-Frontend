@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UniverzitetService } from '../services/univerzitet.service';
 import { Univerzitet } from '../models/univerzitet';
 import { Router } from '@angular/router';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-univerzitet',
@@ -24,8 +25,8 @@ export class UniverzitetComponent implements OnInit {
   constructor(private us: UniverzitetService, private router: Router) {}
 
   ngOnInit(): void {
-    this.us
-      .getUniverzitet(1)
-      .subscribe((res) => (this.univerzitetPodaci = res));
+    this.us.getUniverzitet(1).subscribe((res) => {
+      (this.univerzitetPodaci = res), console.log(res);
+    });
   }
 }
