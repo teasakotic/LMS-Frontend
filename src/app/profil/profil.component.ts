@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrovaniKorisnik } from '../models/registrovani-korisnik';
-import { LoginService } from '../services/login.service';
+import { RegistrovaniKorisniciService } from '../services/registrovani-korisnici.service';
 
 @Component({
   selector: 'app-profil',
@@ -15,13 +15,13 @@ export class ProfilComponent implements OnInit {
     },
     email: null,
     id: null,
-    korisnickoIme: null,
+    username: null,
     lozinka: null,
   };
 
-  constructor(private ls: LoginService) {}
+  constructor(private rs: RegistrovaniKorisniciService) {}
 
   ngOnInit(): void {
-    this.ls.getKorisnik(1).subscribe((r) => (this.korisnik = r));
+    this.rs.getKorisnik(1).subscribe((r) => (this.korisnik = r));
   }
 }

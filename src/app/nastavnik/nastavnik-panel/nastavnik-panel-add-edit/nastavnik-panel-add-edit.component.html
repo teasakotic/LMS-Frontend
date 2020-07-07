@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="formAdd">
+    <h2>Forma za dodavanje</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <button mat-raised-button color="primary">Add</button>
+  </div>
+  <div class="formEdit">
+    <h2>Forma za editovanje</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Opis</mat-label>
+      <input matInput [(ngModel)]="ishod.opis" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nedelja</mat-label>
+      <input matInput [(ngModel)]="ishod.nedelja" />
+    </mat-form-field>
+    <button mat-raised-button (click)="submitChange()">Save changes</button>
+  </div>
+</div>

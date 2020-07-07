@@ -6,14 +6,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class RegistrovaniKorisniciService {
   private _url = 'http://localhost:3000/korisnici';
 
   constructor(private http: HttpClient) {}
-
-  login(korisnik: RegistrovaniKorisnik): Observable<RegistrovaniKorisnik> {
-    return this.http.post<RegistrovaniKorisnik>(this._url, korisnik);
-  }
 
   // TODO: Put this method in register users service
   getKorisnici(): Observable<RegistrovaniKorisnik[]> {
