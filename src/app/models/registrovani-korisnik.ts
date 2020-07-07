@@ -2,7 +2,7 @@ import { Dozvola } from './dozvola';
 
 export interface RegistrovaniKorisnik {
     id: number
-    korisnickoIme: String
+    username: String
     lozinka: String
     email: String
     dozvola: Dozvola

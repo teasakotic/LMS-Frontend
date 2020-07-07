@@ -22,7 +22,7 @@ export class AdministrativnoOsobljePanelComponent implements OnInit {
       dozvola: { id: null, naziv: 'Student' },
       email: null,
       id: null,
-      korisnickoIme: null,
+      username: null,
       lozinka: null,
     },
     licniPodaci: {

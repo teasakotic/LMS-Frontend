@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   korisnik: RegistrovaniKorisnik = {
     id: null,
-    korisnickoIme: null,
+    username: null,
     lozinka: null,
     email: null,
     dozvola: null,

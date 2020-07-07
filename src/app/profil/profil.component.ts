@@ -15,7 +15,7 @@ export class ProfilComponent implements OnInit {
     },
     email: null,
     id: null,
-    korisnickoIme: null,
+    username: null,
     lozinka: null,
   };
 
