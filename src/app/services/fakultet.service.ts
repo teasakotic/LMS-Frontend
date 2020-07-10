@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Fakultet } from '../models/fakultet';
 import { Email } from '../models/email';
+import { StudijskiProgram } from '../models/studijski-program';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,9 @@ export class FakultetService {
 
   getFakultetTelefon(id: number): Observable<Email[]> {
     return this.http.get<Email[]>(this._url + '/telefoni' + `/${id}`);
+  }
+
+  getStudijskiProgramFakulteta(id: number): Observable<StudijskiProgram>{
+    return this.http.get<StudijskiProgram>(this._url + "/studijskiProgrami" + `/${id}`);
   }
 }
