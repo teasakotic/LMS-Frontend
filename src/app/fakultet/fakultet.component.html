@@ -2,9 +2,13 @@
   <div *ngFor="let fakultet of fakulteti">
     <mat-tab label="{{ fakultet.ime }}">
       <div class="faculty-desc">
-        <h2 class="faculty-header">{{ fakultet.opis }}</h2>
-        <h4 class="faculty-email">Email fakulteta: {{ fakultet.email }}</h4>
-
+        <h2 class="faculty-header">{{ fakultet.opis }}</h2> 
+        <div class="dekan">
+          <h2>Podaci o dekanu</h2>
+          <h4>Ime : {{fakultet.dekan.licniPodaci.ime}}</h4>
+          <h4>Prezime : {{fakultet.dekan.licniPodaci.prezime}}</h4>
+          <h4>Broj telefona: {{fakultet.dekan.licniPodaci.brTelefona}}</h4>
+        </div>
         <br />
         <div class="down">
           <p>Pogledajte program za {{ fakultet.naziv }}</p>
