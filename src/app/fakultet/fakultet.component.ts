@@ -13,6 +13,9 @@ export class FakultetComponent implements OnInit {
   constructor(private fs: FakultetService) {}
 
   ngOnInit(): void {
-    this.fs.getFakulteti().subscribe((r) => (this.fakulteti = r));
+    this.fs.getFakulteti().subscribe((r) => {
+      this.fakulteti = r;
+      console.log(this.fakulteti);
+    });
   }
 }

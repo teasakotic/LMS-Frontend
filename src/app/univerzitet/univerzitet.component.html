@@ -17,19 +17,30 @@
         </p>
         <br />
         <h2>Email univerziteta:</h2>
-        <ul *ngFor="let email of univerzitetPodaci.emailUniverziteta">
+        <ul *ngFor="let email of emailUniverziteta">
           <li>
             {{ email.email }}
           </li>
         </ul>
         <br />
         <h2>Telefoni univerziteta:</h2>
-        <ul *ngFor="let telefon of univerzitetPodaci.telefonUniverziteta">
+        <ul *ngFor="let telefon of telefonUniverziteta">
           <li>
             {{ telefon.telefon }}
           </li>
         </ul>
         <br />
+        <div>
+          <h2>Rektorat</h2>
+          <p>Ime rektora: {{ univerzitetPodaci.rektor.licniPodaci.ime }}</p>
+          <p>
+            Prezime rektora: {{ univerzitetPodaci.rektor.licniPodaci.prezime }}
+          </p>
+          <img
+            [src]="univerzitetPodaci.rektor.licniPodaci.putanjaProfilneSlike"
+            alt="profilna slika rektora"
+          />
+        </div>
         <a [routerLink]="['/fakulteti']" routerLinkActive="router-link-active"
           ><button mat-flat-button color="warn">Fakulteti</button></a
         >

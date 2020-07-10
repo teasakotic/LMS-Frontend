@@ -3,6 +3,9 @@ import { UniverzitetService } from '../services/univerzitet.service';
 import { Univerzitet } from '../models/univerzitet';
 import { Router } from '@angular/router';
 import { ThrowStmt } from '@angular/compiler';
+import { Email } from '../models/email';
+import { Telefon } from '../models/telefon';
+import { Nastavnik } from '../models/nastavnik';
 
 @Component({
   selector: 'app-univerzitet',
@@ -22,11 +25,21 @@ export class UniverzitetComponent implements OnInit {
     fakulteti: null,
   };
 
+  emailUniverziteta: Email[];
+  telefonUniverziteta: Telefon[];
+
   constructor(private us: UniverzitetService, private router: Router) {}
 
   ngOnInit(): void {
     this.us.getUniverzitet(1).subscribe((res) => {
-      (this.univerzitetPodaci = res), console.log(res);
+      this.univerzitetPodaci = res;
+      console.log(this.univerzitetPodaci);
+    });
+    this.us.getUniverzitetEmails(1).subscribe((res) => {
+      this.emailUniverziteta = res;
+    });
+    this.us.getUniverzitetTelefon(1).subscribe((res) => {
+      this.telefonUniverziteta = res;
     });
   }
 }

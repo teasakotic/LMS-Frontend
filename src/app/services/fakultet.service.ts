@@ -7,7 +7,7 @@ import { Fakultet } from '../models/fakultet';
   providedIn: 'root',
 })
 export class FakultetService {
-  private _url = 'http://localhost:3000/fakulteti';
+  private _url = 'http://localhost:8080/fakultet';
 
   constructor(private http: HttpClient) {}
 
