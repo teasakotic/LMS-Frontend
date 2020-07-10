@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Fakultet } from '../models/fakultet';
+import { Email } from '../models/email';
+import { StudijskiProgram } from '../models/studijski-program';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FakultetService {
-  private _url = 'http://localhost:3000/fakulteti';
+  private _url = 'http://localhost:8080/fakultet';
 
   constructor(private http: HttpClient) {}
 
@@ -17,5 +19,17 @@ export class FakultetService {
 
   getFakultet(id: number): Observable<Fakultet> {
     return this.http.get<Fakultet>(this._url + `/${id}`);
+  }
+
+  getFakultetEmail(id: number): Observable<Email[]> {
+    return this.http.get<Email[]>(this._url + '/emails' + `/${id}`);
+  }
+
+  getFakultetTelefon(id: number): Observable<Email[]> {
+    return this.http.get<Email[]>(this._url + '/telefoni' + `/${id}`);
+  }
+
+  getStudijskiProgramFakulteta(id: number): Observable<StudijskiProgram>{
+    return this.http.get<StudijskiProgram>(this._url + "/studijskiProgrami" + `/${id}`);
   }
 }

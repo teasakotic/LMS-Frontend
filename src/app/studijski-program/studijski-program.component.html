@@ -1,8 +1,8 @@
 <div class="faculty-desc">
-  <h2 class="faculty-header">{{ fakultet.naziv }}</h2>
+  <h2 class="faculty-header">{{ studjskiProgram.naziv }}</h2>
 
   <div class="faculty-desc-2">
-    <ul *ngFor="let sp of fakultet.studijskiProgram">
+    <ul *ngFor="let sp of studjskiProgram">
       <a
         [routerLink]="['./', sp.id, 'predmeti']"
         routerLinkActive="router-link-active"

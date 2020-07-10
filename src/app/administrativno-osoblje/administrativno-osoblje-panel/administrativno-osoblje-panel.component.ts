@@ -28,6 +28,7 @@ export class AdministrativnoOsobljePanelComponent implements OnInit {
     licniPodaci: {
       brTelefona: null,
       id: null,
+      ime: null,
       putanjaProfilneSlike: null,
       jmbg: null,
       prezime: null,
