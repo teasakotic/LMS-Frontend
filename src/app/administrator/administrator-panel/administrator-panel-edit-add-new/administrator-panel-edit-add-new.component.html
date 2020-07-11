@@ -1,1 +1,38 @@
-<p>administrator-panel-edit-add-new works!</p>
+<div class="content">
+    <form class="example-form" (ngSubmit)="izmjena()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input
+          name="username"
+          matInput
+          value="{{ kor.username }}"
+          [(ngModel)]="kor.username"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Lozinka</mat-label>
+        <input
+          name="lozinka"
+          matInput
+          value="{{ kor.lozinka }}"
+          [(ngModel)]="kor.lozinka"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+          name="email"
+          matInput
+          value="{{ kor.email }}"
+          [(ngModel)]="kor.email"
+        />
+      </mat-form-field>
+      <hr />
+      <button type="submit" mat-raised-button color="primary">
+        Save changes
+      </button>
+    </form>
+  </div>
+  

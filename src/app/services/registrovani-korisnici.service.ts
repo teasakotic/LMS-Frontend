@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RegistrovaniKorisniciService {
-  private _url = 'http://localhost:3000/korisnici';
+  private _url = 'http://localhost:8080/registrovaniKorisnik';
 
   constructor(private http: HttpClient) {}
 
