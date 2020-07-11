@@ -1,0 +1,9 @@
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  list-style: none;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
