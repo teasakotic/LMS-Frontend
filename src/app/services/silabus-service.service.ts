@@ -7,7 +7,7 @@ import { Ishod } from '../models/ishod';
   providedIn: 'root',
 })
 export class SilabusServiceService {
-  private url = 'http://localhost:3000/silabus';
+  private url = 'http://localhost:8080/predmet';
 
   constructor(private http: HttpClient) {}
 

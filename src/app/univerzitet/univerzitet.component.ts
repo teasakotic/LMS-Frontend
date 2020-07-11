@@ -33,7 +33,6 @@ export class UniverzitetComponent implements OnInit {
   ngOnInit(): void {
     this.us.getUniverzitet(1).subscribe((res) => {
       this.univerzitetPodaci = res;
-      console.log(this.univerzitetPodaci);
     });
     this.us.getUniverzitetEmails(1).subscribe((res) => {
       this.emailUniverziteta = res;
