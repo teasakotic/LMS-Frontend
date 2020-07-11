@@ -17,6 +17,7 @@ import { NastavnikPanelComponent } from './nastavnik/nastavnik-panel/nastavnik-p
 import { AdministrativnoOsobljePanelComponent } from './administrativno-osoblje/administrativno-osoblje-panel/administrativno-osoblje-panel.component';
 import { PrijemniComponent } from './prijemni/prijemni.component';
 import { NastavnikPanelAddEditComponent } from './nastavnik/nastavnik-panel/nastavnik-panel-add-edit/nastavnik-panel-add-edit.component';
+import { AdministratorPanelEditAddNewComponent } from './administrator/administrator-panel/administrator-panel-edit-add-new/administrator-panel-edit-add-new.component';
 
 const routes: Routes = [
   { path: 'univerzitet', component: UniverzitetComponent },
@@ -48,6 +49,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   { path: 'administrator-panel', component: AdministratorPanelComponent },
+  {
+    path: 'administrator-panel/:id/edit-add',
+    component: AdministratorPanelEditAddNewComponent,
+  },
 
   // TODO: Promjeniti path na 'nastavnik-panel/:id' , jer dobijamo id od nastavnika ciji je panel
   { path: 'nastavnik-panel', component: NastavnikPanelComponent },

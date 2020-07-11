@@ -7,7 +7,7 @@ import { AdministrativnoOsoblje } from '../models/administrativno-osoblje';
   providedIn: 'root',
 })
 export class AdministrativnoOsobljeService {
-  private _url = 'http://localhost:3000/administrativno-osoblje';
+  private _url = 'http://localhost:8080/administrativnoOsoblje';
 
   constructor(private http: HttpClient) {}
 
