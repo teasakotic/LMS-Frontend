@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     username: null,
     lozinka: null,
     email: null,
-    dozvola: null,
+    korisnickaDozvola: null
   };
 
   login() {

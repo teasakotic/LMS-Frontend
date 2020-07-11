@@ -19,7 +19,7 @@ export class AdministrativnoOsobljePanelComponent implements OnInit {
   noviStudent: Student = {
     id: null,
     registrovaniKorisnik: {
-      dozvola: { id: null, naziv: 'Student' },
+      korisnickaDozvola: null,
       email: null,
       id: null,
       username: null,

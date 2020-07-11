@@ -19,10 +19,7 @@ export class IzmjeniProfilComponent implements OnInit {
     username: null,
     lozinka: null,
     email: null,
-    dozvola: {
-      id: null,
-      naziv: null,
-    },
+    korisnickaDozvola: null,
   };
 
   ngOnInit(): void {
