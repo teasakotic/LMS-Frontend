@@ -23,6 +23,7 @@ export class SilabusComponent implements OnInit {
     ostaliCasovi: null,
     silabus: [{} as Ishod],
     godinaStudija: null,
+    obrisan: null,
   };
 
   dataSource = [];
