@@ -19,7 +19,7 @@ export class StudijskiProgramComponent implements OnInit {
       .getStudijskiProgramFakulteta(this.ac.snapshot.params['id'])
       .subscribe((r) => {
         this.studjskiProgram = r;
-        console.log(r);
+        console.log(this.studjskiProgram);
       });
   }
 }

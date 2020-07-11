@@ -6,8 +6,9 @@
       <a
         [routerLink]="['./', sp.id, 'predmeti']"
         routerLinkActive="router-link-active"
-        ><li>{{ sp.naziv }}</li></a
+        ><li>Naziv studijskog programa: {{ sp.naziv }}</li></a
       >
+      <li>Opis studijskog programa : {{ sp.opis }}</li>
     </ul>
   </div>
 </div>
