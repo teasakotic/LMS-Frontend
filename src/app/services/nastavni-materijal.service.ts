@@ -7,12 +7,11 @@ import { NastavniMaterijal } from '../models/nastavni-materijal';
   providedIn: 'root',
 })
 export class NastavniMaterijalService {
-  // FIXME: Fix this url ; This was for the test
-  private _url = 'http://localhost:3000/nastavniMaterijal';
+  private _url = 'http://localhost:8080/nastavniMaterijal';
 
   constructor(private http: HttpClient) {}
 
-  getNastavniMaterijal(): Observable<NastavniMaterijal[]> {
-    return this.http.get<NastavniMaterijal[]>(this._url);
+  getNastavniMaterijal(id: number): Observable<NastavniMaterijal> {
+    return this.http.get<NastavniMaterijal>(this._url + `/${id}`);
   }
 }

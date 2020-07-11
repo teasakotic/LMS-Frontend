@@ -37,17 +37,20 @@ export class AdministratorPanelComponent implements OnInit {
   ngOnInit(): void {
     this.ks.getKorisnici().subscribe((r) => {
       this.korisnici = r;
+      console.log(r);
+
       this.dataSourceKorisnici = this.korisnici;
       this.displayedColumnsKorisnici = [
         'id',
         'korisnickoIme',
         'email',
-        'dozvola',
         'akcija',
       ];
     });
     this.sps.getStudijskiProgrami().subscribe((sp) => {
       this.studijskiProgrami = sp;
+      console.log(sp);
+
       this.dataSourceStudijskiProgram = this.studijskiProgrami;
       this.displayedColumnsStudijskiProgram = ['id', 'naziv', 'opis', 'akcija'];
     });
@@ -65,5 +68,9 @@ export class AdministratorPanelComponent implements OnInit {
         'akcija',
       ];
     });
+  }
+
+  deleteThis(id: number) {
+    this.ks.delete(id).subscribe((r) => this.ngOnInit());
   }
 }

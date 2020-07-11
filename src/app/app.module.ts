@@ -31,6 +31,7 @@ import { AdministrativnoOsobljePanelComponent } from './administrativno-osoblje/
 import { PrijemniComponent } from './prijemni/prijemni.component';
 import { NastavnikPanelAddEditComponent } from './nastavnik/nastavnik-panel/nastavnik-panel-add-edit/nastavnik-panel-add-edit.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { AdministratorPanelEditAddNewComponent } from './administrator/administrator-panel/administrator-panel-edit-add-new/administrator-panel-edit-add-new.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AuthInterceptor } from './auth.interceptor';
     AdministrativnoOsobljePanelComponent,
     PrijemniComponent,
     NastavnikPanelAddEditComponent,
+    AdministratorPanelEditAddNewComponent,
   ],
   imports: [
     BrowserModule,

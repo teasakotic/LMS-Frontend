@@ -6,5 +6,5 @@ export interface StudijskiProgram {
   naziv: string;
   opis: string;
   fakultet: Fakultet;
-  godinaStudija: GodinaStudija;  // FIXME: Console error -> Cannot read property predmeti of null
+  godinaStudija: GodinaStudija;
 }

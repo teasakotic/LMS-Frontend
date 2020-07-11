@@ -23,6 +23,7 @@ export class SilabusComponent implements OnInit {
     ostaliCasovi: null,
     silabus: [{} as Ishod],
     godinaStudija: null,
+    obrisan: null,
   };
 
   dataSource = [];
@@ -32,7 +33,9 @@ export class SilabusComponent implements OnInit {
   ngOnInit(): void {
     this.ps.getPredmet(this.ar.snapshot.params['id']).subscribe((r) => {
       this.predmet = r;
-      this.dataSource = r.silabus;
+    });
+    this.ps.getSilabus(this.ar.snapshot.params['id']).subscribe((r) => {
+      this.dataSource = r;
     });
   }
 

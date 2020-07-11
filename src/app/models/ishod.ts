@@ -1,17 +1,11 @@
 import { EvaluacijaZnanja } from './evaluacija-znanja';
 import { Predmet } from './predmet';
-import { TerminNastave } from './termin-nastave';
-import { ObrazovniCilj } from './obrazovni-cilj';
-import { NastavniMaterijal } from './nastavni-materijal';
+import { RealizacijaPredmeta } from './realizacija-predmeta';
 
 export interface Ishod {
   id: number;
   opis: String;
   nedelja: String;
-  // TODO: Delete comments for final version
-  // evaluacijaZnanja: EvaluacijaZnanja
-  // predmet: Predmet
-  // terminNastave: TerminNastave
-  // obrazovniCilj: ObrazovniCilj
-  // nastavniMaterijal: NastavniMaterijal
+  predmet: Predmet;
+  realizacijaPredmeta: RealizacijaPredmeta;
 }

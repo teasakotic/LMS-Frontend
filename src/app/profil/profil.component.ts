@@ -9,10 +9,7 @@ import { RegistrovaniKorisniciService } from '../services/registrovani-korisnici
 })
 export class ProfilComponent implements OnInit {
   korisnik: RegistrovaniKorisnik = {
-    dozvola: {
-      id: null,
-      naziv: null,
-    },
+    korisnickaDozvola: null,
     email: null,
     id: null,
     username: null,

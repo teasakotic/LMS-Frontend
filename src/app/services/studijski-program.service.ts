@@ -7,7 +7,7 @@ import { StudijskiProgram } from '../models/studijski-program';
   providedIn: 'root',
 })
 export class StudijskiProgramService {
-  private _url = 'http://localhost:3000/studijskiProgram';
+  private _url = 'http://localhost:8080/studijskiProgram';
 
   constructor(private http: HttpClient) {}
 

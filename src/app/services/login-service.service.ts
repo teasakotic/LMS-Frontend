@@ -16,8 +16,8 @@ export class LoginServiceService {
       r.subscribe((t) => {
         this.token = t['token'];
         this.korisnik = JSON.parse(atob(t['tokne'].split('.')[1]));
+        console.log(t['token']);
       });
-
       return r;
     });
   }

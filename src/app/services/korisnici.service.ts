@@ -7,7 +7,7 @@ import { RegistrovaniKorisnik } from '../models/registrovani-korisnik';
   providedIn: 'root',
 })
 export class KorisniciService {
-  private _url = 'http://localhost:3000/korisnici';
+  private _url = 'http://localhost:8080/registrovaniKorisnik';
 
   constructor(private http: HttpClient) {}
 
@@ -17,5 +17,9 @@ export class KorisniciService {
 
   getKorisnik(id: number): Observable<RegistrovaniKorisnik> {
     return this.http.get<RegistrovaniKorisnik>(this._url + `${id}`);
+  }
+
+  delete(id: number) {
+    return this.http.delete(this._url + `/${id}`);
   }
 }

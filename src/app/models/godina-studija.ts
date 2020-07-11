@@ -5,5 +5,5 @@ export interface GodinaStudija {
     godina: number,
     datumPocetka: Date,
     datumKraja: Date,
-    predmeti: Predmet[];
+    predmeti: Predmet[]; // TODO: Delete this
 }

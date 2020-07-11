@@ -1,3 +1,12 @@
-<div *ngFor="let nm of nastavniMaterijal">
-  <p>{{ nm.autori }}</p>
+<div class="box">
+  <ul>
+    <li>
+      <p>Naziv nastavnog materijala: {{ nastavniMaterijal.naziv }}</p>
+      <p>
+        Godina izdavanja nastavnog materijala: <br />{{
+          nastavniMaterijal.godinaIzdavanja | date
+        }}
+      </p>
+    </li>
+  </ul>
 </div>
