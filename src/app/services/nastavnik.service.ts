@@ -7,7 +7,7 @@ import { Nastavnik } from '../models/nastavnik';
   providedIn: 'root',
 })
 export class NastavnikService {
-  private _url = 'http://localhost:3000/nastavnici';
+  private _url = 'http://localhost:8080/nastavnik';
 
   constructor(private http: HttpClient) {}
 

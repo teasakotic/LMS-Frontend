@@ -11,7 +11,9 @@ import { SilabusServiceService } from 'src/app/services/silabus-service.service'
   styleUrls: ['./nastavnik-panel.component.css'],
 })
 export class NastavnikPanelComponent implements OnInit {
-  nastavnik: Nastavnik = {} as Nastavnik;
+  nastavnik: Nastavnik = {
+    licniPodaci: null,
+  } as Nastavnik;
   predmeti: Predmet[] = [];
 
   // Predmeti
@@ -29,9 +31,10 @@ export class NastavnikPanelComponent implements OnInit {
   ngOnInit(): void {
     this.ns.getNastavnik(1).subscribe((res) => {
       this.nastavnik = res;
-      this.predmeti = res.studijskiProgram.godinaStudija.predmeti;
+      // this.predmeti = res.studijskiProgram.godinaStudija.predmeti;
+      console.log(this.nastavnik);
 
-      this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
+      // this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
       this.displayedColumnsPredmeti = [
         'naziv',
         'espb',
@@ -45,7 +48,6 @@ export class NastavnikPanelComponent implements OnInit {
       this.ss.getAll().subscribe((r) => this.dataSourceSilabus.push(r));
       this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
-    console.log(this.dataSourceSilabus);
   }
 
   // TODO: Uncomment after providing service
