@@ -35,22 +35,10 @@ export class NastavnikPanelComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.ns.getNastavnik(1).subscribe((res) => {
-      // this.nastavnik = res;
-      // this.predmeti = res.studijskiProgram.godinaStudija.predmeti;
-      // this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
-      // res.studijskiProgram.godinaStudija.predmeti.map((x) =>
-      //   this.dataSourceSilabus.push(x.silabus)
-      // );
-      // this.ss.getAll().subscribe((r) => this.dataSourceSilabus.push(r));
-    });
-
     this.nnrs.getNastavnik(1).subscribe((r) => {
       this.nastavnik = r.nastavnik;
       this.predmeti.push(r.realizacijaPredmeta.predmet);
       this.dataSourcePredmeti = this.predmeti;
-      console.log(this.predmeti);
-      
 
       this.displayedColumnsPredmeti = [
         'naziv',
@@ -63,14 +51,8 @@ export class NastavnikPanelComponent implements OnInit {
       this.ps.getSilabus(1).subscribe((r) => {
         this.dataSourceSilabus.push(r);
       });
-      console.log(this.dataSourceSilabus);
-      
+
       this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
   }
-
-  // TODO: Uncomment after providing service
-  // delete(id: number) {
-  //   this.servis.delete(id).subscribe((r) => console.log('Uspesno brisanje'));
-  // }
 }
