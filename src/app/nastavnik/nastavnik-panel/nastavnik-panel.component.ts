@@ -8,6 +8,8 @@ import { LicniPodaci } from 'src/app/models/licni-podaci';
 import { NastavnikNaRealizacijiService } from 'src/app/services/nastavnik-na-realizaciji.service';
 import { PredmetiService } from 'src/app/services/predmeti.service';
 import { EvaluacijaZnanjaService } from 'src/app/services/evaluacija-znanja.service';
+import { RegistrovaniKorisniciService } from 'src/app/services/registrovani-korisnici.service';
+import { RegistrovaniKorisnik } from 'src/app/models/registrovani-korisnik';
 
 @Component({
   selector: 'app-nastavnik-panel',
@@ -31,11 +33,15 @@ export class NastavnikPanelComponent implements OnInit {
   // Definicija evaluacije
   dataSourceDefEv = [];
   displayedColumnsDefEv: string[];
+  // Filter Data
+  public searchText: string;
+  korisnici: RegistrovaniKorisnik[] = [];
 
   constructor(
     private ps: PredmetiService,
     private nnrs: NastavnikNaRealizacijiService,
-    private ezs: EvaluacijaZnanjaService
+    private ezs: EvaluacijaZnanjaService,
+    private rks: RegistrovaniKorisniciService
   ) {}
 
   ngOnInit(): void {
@@ -66,10 +72,14 @@ export class NastavnikPanelComponent implements OnInit {
         'trajanjeUMinutima',
         'vremePocetka',
         'vremeZavrsetka',
-        'akcije'
+        'akcije',
       ];
 
       this.dataSourceDefEv.push(r);
+    });
+
+    this.rks.getKorisnici().subscribe((r) => {
+      this.korisnici = r
     });
   }
 }

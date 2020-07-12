@@ -24,7 +24,7 @@
         <th mat-header-cell *matHeaderCellDef>Broj vezbi</th>
         <td mat-cell *matCellDef="let element">{{ element.brojVezbi }}</td>
       </ng-container>
-      
+
       <ng-container matColumnDef="istrazivackiRad">
         <th mat-header-cell *matHeaderCellDef>Istrazivacki rad</th>
         <td mat-cell *matCellDef="let element">
@@ -104,9 +104,11 @@
         </ng-container>
 
         <ng-container matColumnDef="trajanjeUMinutima">
-          <th mat-header-cell *matHeaderCellDef>Trajanja evaluacije znanja u minutima</th>
+          <th mat-header-cell *matHeaderCellDef>
+            Trajanja evaluacije znanja u minutima
+          </th>
           <td mat-cell *matCellDef="let element">
-            {{ element.trajanjeUMinutima}}
+            {{ element.trajanjeUMinutima }}
           </td>
         </ng-container>
 
@@ -145,9 +147,36 @@
     Upravljanje obavjestenjima za predmete kojima su angazovani
   </mat-tab>
   <mat-tab label="Pretraga">
-    Pretraga studenata po : 1. Imenu 2. Prezimenu 3. Broju indeksa 4. Godina
-    upisa 5. Prosecnoj oceni (Pretraga se vrsi na nivou fakulteta a nakon toga
-    se vrsi filtriranje)
+    <div class="container">
+      <div class="row">
+        <div class="search-hero">
+          <input
+            class="form-control"
+            type="text"
+            name="search"
+            [(ngModel)]="searchText"
+            autocomplete="off"
+            placeholder="Pretrazi studenta"
+          />
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>username</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let kor of korisnici | filter: searchText">
+              <td>{{ kor.id }}</td>
+              <td>{{ kor.username }}</td>
+              <td>{{ kor.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </mat-tab>
   <mat-tab label="Podaci o studentima">
     Pregledanje podataka o studentima
