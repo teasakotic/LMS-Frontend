@@ -7,6 +7,7 @@ import { SilabusServiceService } from 'src/app/services/silabus-service.service'
 import { LicniPodaci } from 'src/app/models/licni-podaci';
 import { NastavnikNaRealizacijiService } from 'src/app/services/nastavnik-na-realizaciji.service';
 import { PredmetiService } from 'src/app/services/predmeti.service';
+import { EvaluacijaZnanjaService } from 'src/app/services/evaluacija-znanja.service';
 
 @Component({
   selector: 'app-nastavnik-panel',
@@ -27,11 +28,14 @@ export class NastavnikPanelComponent implements OnInit {
   // Silabus
   dataSourceSilabus = [];
   displayedColumnsSilabus: string[];
+  // Definicija evaluacije
+  dataSourceDefEv = [];
+  displayedColumnsDefEv: string[];
 
   constructor(
-    private ns: NastavnikService,
     private ps: PredmetiService,
-    private nnrs: NastavnikNaRealizacijiService
+    private nnrs: NastavnikNaRealizacijiService,
+    private ezs: EvaluacijaZnanjaService
   ) {}
 
   ngOnInit(): void {
@@ -53,6 +57,19 @@ export class NastavnikPanelComponent implements OnInit {
       });
 
       this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
+    });
+
+    this.ezs.getEvaluacija().subscribe((r) => {
+      this.displayedColumnsDefEv = [
+        'id',
+        'realizacijaPredmeta.predmet.naziv',
+        'trajanjeUMinutima',
+        'vremePocetka',
+        'vremeZavrsetka',
+        'akcije'
+      ];
+
+      this.dataSourceDefEv.push(r);
     });
   }
 }
