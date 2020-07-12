@@ -6,6 +6,7 @@ import { Ishod } from 'src/app/models/ishod';
 import { SilabusServiceService } from 'src/app/services/silabus-service.service';
 import { LicniPodaci } from 'src/app/models/licni-podaci';
 import { NastavnikNaRealizacijiService } from 'src/app/services/nastavnik-na-realizaciji.service';
+import { PredmetiService } from 'src/app/services/predmeti.service';
 
 @Component({
   selector: 'app-nastavnik-panel',
@@ -29,7 +30,7 @@ export class NastavnikPanelComponent implements OnInit {
 
   constructor(
     private ns: NastavnikService,
-    private ss: SilabusServiceService,
+    private ps: PredmetiService,
     private nnrs: NastavnikNaRealizacijiService
   ) {}
 
@@ -37,22 +38,19 @@ export class NastavnikPanelComponent implements OnInit {
     this.ns.getNastavnik(1).subscribe((res) => {
       // this.nastavnik = res;
       // this.predmeti = res.studijskiProgram.godinaStudija.predmeti;
-
       // this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
-
       // res.studijskiProgram.godinaStudija.predmeti.map((x) =>
       //   this.dataSourceSilabus.push(x.silabus)
       // );
-      this.ss.getAll().subscribe((r) => this.dataSourceSilabus.push(r));
-      this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
+      // this.ss.getAll().subscribe((r) => this.dataSourceSilabus.push(r));
     });
 
     this.nnrs.getNastavnik(1).subscribe((r) => {
-      console.log(r);
       this.nastavnik = r.nastavnik;
       this.predmeti.push(r.realizacijaPredmeta.predmet);
       this.dataSourcePredmeti = this.predmeti;
       console.log(this.predmeti);
+      
 
       this.displayedColumnsPredmeti = [
         'naziv',
@@ -61,6 +59,13 @@ export class NastavnikPanelComponent implements OnInit {
         'brojVezbi',
         'istrazivackiRad',
       ];
+
+      this.ps.getSilabus(1).subscribe((r) => {
+        this.dataSourceSilabus.push(r);
+      });
+      console.log(this.dataSourceSilabus);
+      
+      this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
   }
 
