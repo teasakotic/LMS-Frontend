@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-1;
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -67,6 +67,7 @@ import { AdministratorPanelEditAddNewComponent } from './administrator/administr
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     {

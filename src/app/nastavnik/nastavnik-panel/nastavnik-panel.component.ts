@@ -4,6 +4,15 @@ import { NastavnikService } from 'src/app/services/nastavnik.service';
 import { Predmet } from 'src/app/models/predmet';
 import { Ishod } from 'src/app/models/ishod';
 import { SilabusServiceService } from 'src/app/services/silabus-service.service';
+import { LicniPodaci } from 'src/app/models/licni-podaci';
+import { NastavnikNaRealizacijiService } from 'src/app/services/nastavnik-na-realizaciji.service';
+import { PredmetiService } from 'src/app/services/predmeti.service';
+import { EvaluacijaZnanjaService } from 'src/app/services/evaluacija-znanja.service';
+import { RegistrovaniKorisniciService } from 'src/app/services/registrovani-korisnici.service';
+import { RegistrovaniKorisnik } from 'src/app/models/registrovani-korisnik';
+import { StudentService } from 'src/app/services/student.service';
+import { Student } from 'src/app/models/student';
+import { StudentNaGodiniService } from 'src/app/services/student-na-godini.service';
 
 @Component({
   selector: 'app-nastavnik-panel',
@@ -12,7 +21,9 @@ import { SilabusServiceService } from 'src/app/services/silabus-service.service'
 })
 export class NastavnikPanelComponent implements OnInit {
   nastavnik: Nastavnik = {
-    licniPodaci: null,
+    licniPodaci: {
+      ime: null,
+    } as LicniPodaci,
   } as Nastavnik;
   predmeti: Predmet[] = [];
 
@@ -22,19 +33,30 @@ export class NastavnikPanelComponent implements OnInit {
   // Silabus
   dataSourceSilabus = [];
   displayedColumnsSilabus: string[];
+  // Definicija evaluacije
+  dataSourceDefEv = [];
+  displayedColumnsDefEv: string[];
+  // Filter Data
+  public searchText: string;
+  korisnici: RegistrovaniKorisnik[] = [];
+  // Student
+  studenti: Student[] = [];
 
   constructor(
-    private ns: NastavnikService,
-    private ss: SilabusServiceService
+    private ps: PredmetiService,
+    private nnrs: NastavnikNaRealizacijiService,
+    private ezs: EvaluacijaZnanjaService,
+    private rks: RegistrovaniKorisniciService,
+    private ss: StudentService,
+    private sngs: StudentNaGodiniService
   ) {}
 
   ngOnInit(): void {
-    this.ns.getNastavnik(1).subscribe((res) => {
-      this.nastavnik = res;
-      // this.predmeti = res.studijskiProgram.godinaStudija.predmeti;
-      console.log(this.nastavnik);
+    this.nnrs.getNastavnik(1).subscribe((r) => {
+      this.nastavnik = r.nastavnik;
+      this.predmeti.push(r.realizacijaPredmeta.predmet);
+      this.dataSourcePredmeti = this.predmeti;
 
-      // this.dataSourcePredmeti = res.studijskiProgram.godinaStudija.predmeti;
       this.displayedColumnsPredmeti = [
         'naziv',
         'espb',
@@ -42,16 +64,37 @@ export class NastavnikPanelComponent implements OnInit {
         'brojVezbi',
         'istrazivackiRad',
       ];
-      // res.studijskiProgram.godinaStudija.predmeti.map((x) =>
-      //   this.dataSourceSilabus.push(x.silabus)
-      // );
-      this.ss.getAll().subscribe((r) => this.dataSourceSilabus.push(r));
+
+      this.ps.getSilabus(1).subscribe((r) => {
+        this.dataSourceSilabus.push(r);
+      });
+
       this.displayedColumnsSilabus = ['opis', 'nedelja', 'akcije'];
     });
-  }
 
-  // TODO: Uncomment after providing service
-  // delete(id: number) {
-  //   this.servis.delete(id).subscribe((r) => console.log('Uspesno brisanje'));
-  // }
+    this.ezs.getEvaluacija().subscribe((r) => {
+      this.displayedColumnsDefEv = [
+        'id',
+        'realizacijaPredmeta.predmet.naziv',
+        'trajanjeUMinutima',
+        'vremePocetka',
+        'vremeZavrsetka',
+        'akcije',
+      ];
+
+      this.dataSourceDefEv.push(r);
+    });
+
+    this.rks.getKorisnici().subscribe((r) => {
+      this.korisnici = r;
+    });
+
+    this.ss.getStudenti().subscribe((r) => {
+      console.log(r);
+    });
+
+    this.sngs.getStudentNaGodini().subscribe((r) => {
+      console.log(r);
+    });
+  }
 }
