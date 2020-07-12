@@ -10,6 +10,9 @@ import { PredmetiService } from 'src/app/services/predmeti.service';
 import { EvaluacijaZnanjaService } from 'src/app/services/evaluacija-znanja.service';
 import { RegistrovaniKorisniciService } from 'src/app/services/registrovani-korisnici.service';
 import { RegistrovaniKorisnik } from 'src/app/models/registrovani-korisnik';
+import { StudentService } from 'src/app/services/student.service';
+import { Student } from 'src/app/models/student';
+import { StudentNaGodiniService } from 'src/app/services/student-na-godini.service';
 
 @Component({
   selector: 'app-nastavnik-panel',
@@ -36,12 +39,16 @@ export class NastavnikPanelComponent implements OnInit {
   // Filter Data
   public searchText: string;
   korisnici: RegistrovaniKorisnik[] = [];
+  // Student
+  studenti: Student[] = [];
 
   constructor(
     private ps: PredmetiService,
     private nnrs: NastavnikNaRealizacijiService,
     private ezs: EvaluacijaZnanjaService,
-    private rks: RegistrovaniKorisniciService
+    private rks: RegistrovaniKorisniciService,
+    private ss: StudentService,
+    private sngs: StudentNaGodiniService
   ) {}
 
   ngOnInit(): void {
@@ -79,7 +86,15 @@ export class NastavnikPanelComponent implements OnInit {
     });
 
     this.rks.getKorisnici().subscribe((r) => {
-      this.korisnici = r
+      this.korisnici = r;
+    });
+
+    this.ss.getStudenti().subscribe((r) => {
+      console.log(r);
+    });
+
+    this.sngs.getStudentNaGodini().subscribe((r) => {
+      console.log(r);
     });
   }
 }
