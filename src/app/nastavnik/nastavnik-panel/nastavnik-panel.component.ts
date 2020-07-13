@@ -1,16 +1,12 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Nastavnik } from 'src/app/models/nastavnik';
-import { NastavnikService } from 'src/app/services/nastavnik.service';
 import { Predmet } from 'src/app/models/predmet';
-import { Ishod } from 'src/app/models/ishod';
-import { SilabusServiceService } from 'src/app/services/silabus-service.service';
 import { LicniPodaci } from 'src/app/models/licni-podaci';
 import { NastavnikNaRealizacijiService } from 'src/app/services/nastavnik-na-realizaciji.service';
 import { PredmetiService } from 'src/app/services/predmeti.service';
 import { EvaluacijaZnanjaService } from 'src/app/services/evaluacija-znanja.service';
 import { RegistrovaniKorisniciService } from 'src/app/services/registrovani-korisnici.service';
 import { RegistrovaniKorisnik } from 'src/app/models/registrovani-korisnik';
-import { StudentService } from 'src/app/services/student.service';
 import { Student } from 'src/app/models/student';
 import { StudentNaGodiniService } from 'src/app/services/student-na-godini.service';
 
@@ -47,7 +43,6 @@ export class NastavnikPanelComponent implements OnInit {
     private nnrs: NastavnikNaRealizacijiService,
     private ezs: EvaluacijaZnanjaService,
     private rks: RegistrovaniKorisniciService,
-    private ss: StudentService,
     private sngs: StudentNaGodiniService
   ) {}
 
@@ -87,10 +82,6 @@ export class NastavnikPanelComponent implements OnInit {
 
     this.rks.getKorisnici().subscribe((r) => {
       this.korisnici = r;
-    });
-
-    this.ss.getStudenti().subscribe((r) => {
-      console.log(r);
     });
 
     this.sngs.getStudentNaGodini().subscribe((r) => {
