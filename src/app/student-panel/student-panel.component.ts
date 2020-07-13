@@ -30,6 +30,13 @@ export class StudentPanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ss.getStudent(1).subscribe((r) => (this.student = r));
+    this.ss.getStudent(1).subscribe((r) => {
+      this.student = r;
+      // console.log(r);
+    });
+
+    this.ss.getDetaljiStudenta(1).subscribe((r) => {
+      // console.log(r);
+    });
   }
 }
