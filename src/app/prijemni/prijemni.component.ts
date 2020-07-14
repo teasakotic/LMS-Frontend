@@ -11,5 +11,5 @@ export class PrijemniComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
+
