@@ -15,7 +15,7 @@ export class FakultetComponent implements OnInit {
   telefon: Telefon[] = [];
 
   constructor(private fs: FakultetService) {}
-
+ 
   ngOnInit(): void {
     this.fs.getFakulteti().subscribe((r) => {
       this.fakulteti = r;
