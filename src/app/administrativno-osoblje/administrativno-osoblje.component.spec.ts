@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdministrativnoOsobljeComponent } from './administrativno-osoblje.component';
+import { AdministrativnoOsobljeComponent }  from './administrativno-osoblje.component';
 
 describe('AdministrativnoOsobljeComponent', () => {
   let component: AdministrativnoOsobljeComponent;
@@ -10,7 +10,7 @@ describe('AdministrativnoOsobljeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ AdministrativnoOsobljeComponent ]
     })
-    .compileComponents();
+    .compileComponents(); 
   }));
 
   beforeEach(() => {
