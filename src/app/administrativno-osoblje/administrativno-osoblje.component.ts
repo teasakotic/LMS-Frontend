@@ -12,4 +12,4 @@ export class AdministrativnoOsobljeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+} 
