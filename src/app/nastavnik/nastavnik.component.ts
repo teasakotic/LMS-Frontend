@@ -11,5 +11,5 @@ export class NastavnikComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
+
