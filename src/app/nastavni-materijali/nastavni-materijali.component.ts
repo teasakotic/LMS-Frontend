@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NastavniMaterijal } from '../models/nastavni-materijal';
 import { NastavniMaterijalService } from '../services/nastavni-materijal.service';
 import { ActivatedRoute } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-nastavni-materijali',
   templateUrl: './nastavni-materijali.component.html',
