@@ -1,9 +1,9 @@
 .content {
-    display: flex;
-    justify-content: center;
+    display: flex; 
+    justify-content: center; 
 }
 
-.mat-display-2 {
+.mat-display-2 { 
     position: absolute;
     top: 45%;
     text-transform: uppercase;
